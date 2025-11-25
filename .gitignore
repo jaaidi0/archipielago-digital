@@ -1,0 +1,33 @@
+# Archivos que no se deben subir al repositorio
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Archivos temporales
+*.tmp
+*.temp
+*.log
+
+# Archivos de backup
+*.bak
+*.backup
+
+# Archivos de audio (si son muy grandes)
+# audio/ambient.mp3
+
+# Archivos de desarrollo
+node_modules/
+.env
+.env.local
+
+# Archivos comprimidos
+*.zip
+*.rar
+*.tar.gz

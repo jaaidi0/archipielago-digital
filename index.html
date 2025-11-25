@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Archipiélago Digital - Mostapha El Jaidi | Biólogo Informático</title>
+<meta name="description" content="Biólogo en transformación hacia la informática. Portfolio interactivo que une ciencia, tecnología y creatividad.">
+<meta name="keywords" content="biólogo informático, bio-programador, WordPress, Python, Docker, Linux, automatización, IA">
+<meta name="author" content="Mostapha El Jaidi">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jaaidi0.github.io/archipielago-digital/">
+<meta property="og:title" content="Mostapha El Jaidi - Biólogo Informático">
+<meta property="og:description" content="Del estudio de sistemas biológicos al desarrollo de sistemas informáticos. Portfolio interactivo con temática marina.">
+<meta property="og:image" content="https://jaaidi0.github.io/archipielago-digital/img/foto.png">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://jaaidi0.github.io/archipielago-digital/">
+<meta property="twitter:title" content="Mostapha El Jaidi - Biólogo Informático">
+<meta property="twitter:description" content="Del estudio de sistemas biológicos al desarrollo de sistemas informáticos.">
+<meta property="twitter:image" content="https://jaaidi0.github.io/archipielago-digital/img/foto.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="img/barco.svg">
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- ===================== ENTRADA / TRÁILER ===================== -->
+<section id="introScreen" aria-label="Intro Trailer">
+  <canvas id="introParticles" aria-hidden="true"></canvas>
+
+  <div class="intro-center">
+    <h1 class="holo-title">ARCHIPIÉLAGO DIGITAL</h1>
+    <p class="holo-sub">
+      De los sistemas biológicos a los sistemas informáticos<br/>
+      Un viaje de transformación profesional y pasión tecnológica
+    </p>
+
+    <button id="startButton" class="btn-neon" aria-label="Comenzar la aventura">
+      ¡Comenzar la aventura!
+    </button>
+  </div>
+
+  <div class="ship-wrap">
+    <svg class="ship" viewBox="0 0 120 60" aria-hidden="true">
+      <path d="M5 45 Q60 55 115 45 L105 35 Q60 45 15 35 Z" fill="#c2a36a"/>
+      <rect x="52" y="8" width="3" height="28" fill="#ddd"/>
+      <path d="M55 10 L85 22 L55 22 Z" fill="#eaeaea"/>
+      <path d="M55 22 L75 35 L55 35 Z" fill="#dcdcdc"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===================== BARRA + HERO MEJORADO ===================== -->
+<header id="mainHeader" aria-label="Navegación principal">
+  <nav class="nav-bar">
+    <button class="nav-btn" data-target="#heroSection" data-translate="nav.home">Inicio</button>
+    <button class="nav-btn" data-target="#mapScreen" data-translate="nav.map">Mapa</button>
+    <button class="nav-btn" data-target="#infoSection" data-translate="nav.info">Bio-Info</button>
+    <button class="nav-btn" data-target="#proyectosSection" data-translate="nav.projects">Proyectos</button>
+    <button class="nav-btn" data-target="#contactSection" data-translate="nav.contact">Contacto</button>
+    
+    <!-- Selector de idiomas mejorado -->
+    <div class="language-selector">
+      <button class="lang-btn active" data-lang="es">🇪🇸</button>
+      <button class="lang-btn" data-lang="en">🇺🇸</button>
+      <button class="lang-btn" data-lang="fr">🇫🇷</button>
+      <button class="lang-btn" data-lang="ar">🇲🇦</button>
+    </div>
+  </nav>
+</header>
+
+<section id="heroSection" class="container">
+  <div class="hero">
+    
+    <!-- CONTENEDOR DE FOTO CON EFECTOS ESPECTACULARES -->
+    <div class="hero-img-container">
+      
+      <!-- Efecto vortex -->
+      <div class="vortex"></div>
+      <div class="vortex"></div>
+      
+      <!-- Efecto ondas sísmicas -->
+      <div class="seismic-wave"></div>
+      <div class="seismic-wave"></div>
+      <div class="seismic-wave"></div>
+      
+      <!-- Efecto agua -->
+      <div class="water-ripple"></div>
+      <div class="water-ripple"></div>
+      <div class="water-ripple"></div>
+      
+      <!-- Escáner biológico -->
+      <div class="bio-scanner"></div>
+      
+      <!-- Partículas flotantes -->
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      
+      <!-- Puntos de energía -->
+      <div class="energy-dot" style="top: 15%; left: 25%;"></div>
+      <div class="energy-dot" style="top: 75%; left: 15%; animation-delay: 0.5s;"></div>
+      <div class="energy-dot" style="top: 25%; left: 75%; animation-delay: 1s;"></div>
+      <div class="energy-dot" style="top: 85%; left: 65%; animation-delay: 1.5s;"></div>
+      
+      <!-- Destellos aleatorios -->
+      <div class="flash"></div>
+      <div class="flash"></div>
+      <div class="flash"></div>
+      <div class="flash"></div>
+      
+      <!-- LA FOTO PRINCIPAL -->
+      <img src="img/foto.png" alt="Mostapha El Jaidi - Biólogo Informático" class="hero-img"/>
+      
+    </div>
+    
+    <div class="hero-copy">
+      <h2 data-translate="hero.title" class="holo-title-3d">
+        <span>B</span><span>i</span><span>ó</span><span>l</span><span>o</span><span>g</span><span>o</span>
+        <span> </span>
+        <span>n</span><span>a</span><span>v</span><span>e</span><span>g</span><span>a</span><span>n</span><span>d</span><span>o</span>
+        <span> </span>
+        <span>h</span><span>a</span><span>c</span><span>i</span><span>a</span>
+        <span> </span>
+        <span>l</span><span>a</span>
+        <span> </span>
+        <span>I</span><span>n</span><span>f</span><span>o</span><span>r</span><span>m</span><span>á</span><span>t</span><span>i</span><span>c</span><span>a</span>
+      </h2>
+      
+      <p data-translate="hero.description">
+        Después de explorar los sistemas biológicos, ahora cartografío sistemas informáticos. 
+        Mi formación científica me da una perspectiva única para resolver problemas tecnológicos: 
+        observación, análisis y método.
+      </p>
+      
+      <div class="cta-row">
+        <a href="#mapScreen" class="btn-ghost" data-translate="hero.map">
+          <span>🚀</span> Ver mi travesía
+        </a>
+        <a href="#proyectosSection" class="btn-ghost" data-translate="hero.projects">
+          <span>🔬</span> Proyectos en curso
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MAPA DEL TESORO ===================== -->
+<section id="mapScreen" class="map-wrap" aria-label="Mapa del tesoro">
+  <img src="img/pergamino_fondo.png" alt="Mapa del archipiélago" class="map-bg" />
+
+  <h3 class="map-title" data-translate="map.title">RUTA DE TRANSFORMACIÓN DIGITAL</h3>
+
+  <div id="barco" class="barco" aria-hidden="true" title="Barco"></div>
+
+  <!-- Islas actualizadas -->
+  <button class="isla" style="top:18%; left:24%;" data-name="Isla Bio-Info" data-target="#infoSection" aria-label="Ir a Isla Bio-Info"></button>
+  <button class="isla" style="top:52%; left:62%;" data-name="Isla Proyectos" data-target="#proyectosSection" aria-label="Ir a Isla Proyectos"></button>
+  <button class="isla" style="top:72%; left:38%;" data-name="Isla Contacto" data-target="#contactSection" aria-label="Ir a Isla Contacto"></button>
+
+  <div class="waves" aria-hidden="true"></div>
+</section>
+
+<!-- ===================== SECCIONES DE CONTENIDO ===================== -->
+<section id="infoSection" class="container section">
+  <h2 data-translate="info.title">Del Microscopio al Código</h2>
+  <p class="narrative" data-translate="info.narrative1">
+    Como biólogo, aprendí a observar sistemas complejos, identificar patrones y entender 
+    cómo las partes se relacionan para formar un todo. Ahora aplico esa misma mentalidad 
+    analítica al mundo de la informática.
+  </p>
+  <p class="narrative" data-translate="info.narrative2">
+    Mi travesía comenzó en los laboratorios de Marruecos y España, estudiando agricultura 
+    y biología. Pero descubrí que mi verdadera pasión estaba en entender y construir 
+    sistemas digitales. La transición fue natural: de analizar ecosistemas a diseñar 
+    arquitecturas de software.
+  </p>
+  <p class="narrative" data-translate="info.narrative3">
+    Actualmente estoy especializándome en montaje y mantenimiento de sistemas microinformáticos, 
+    mientras desarrollo mis habilidades en WordPress, Python y Docker. Cada línea de código 
+    es un nuevo organismo que aprender a comprender.
+  </p>
+
+  <div class="skills-compass">
+    <h3 data-translate="info.skillsTitle">Mi Ecosistema de Habilidades</h3>
+    <ul>
+      <li data-translate="info.skill1">🔬 Mentalidad Científica: Análisis, método, resolución de problemas</li>
+      <li data-translate="info.skill2">🖥️ Montaje y Mantenimiento: Sistemas microinformáticos (MF1207_1, MF1208_1)</li>
+      <li data-translate="info.skill3">🌐 Desarrollo Web: WordPress, HTML5, CSS3</li>
+      <li data-translate="info.skill4">🐍 Automatización: Python, n8n, scripts</li>
+      <li data-translate="info.skill5">🐋 Infraestructura: Docker, Linux, virtualización</li>
+      <li data-translate="info.skill6">🧠 IA y Productividad: ChatGPT, Copilot, Google Workspace</li>
+      <li data-translate="info.skill7">🗣️ Idiomas: Árabe, Español, Francés, Inglés</li>
+    </ul>
+  </div>
+
+  <!-- Sección de formación -->
+  <div class="education-timeline">
+    <h3 data-translate="education.title">Mi Expedición Académica</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="year">2025-2026</span>
+        <div class="content">
+          <h4 data-translate="education.item1">Operaciones Auxiliares de Montaje y Mantenimiento de Sistemas Microinformáticos</h4>
+          <p data-translate="education.item1_desc">Ayuntamiento de Dos Hermanas - Programa EFESO (FSE+)</p>
+          <div class="certificates">
+            <span class="cert-badge">MF1207_1</span>
+            <span class="cert-badge">MF1208_1</span>
+            <span class="cert-badge">MF1209_1</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2025</span>
+        <div class="content">
+          <h4 data-translate="education.item2">Instalación y Configuración de Sistemas Operativos</h4>
+          <p data-translate="education.item2_desc">Junta de Andalucía - VIRENSIS (MF0219_2 - 60 horas)</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <span class="year">2018-2021</span>
+        <div class="content">
+          <h4 data-translate="education.item3">Formación Universitaria en Ciencias</h4>
+          <p data-translate="education.item3_desc">Biología (FSSM - Marruecos) + Ingeniería Agrícola (Universidad de Sevilla)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proyectosSection" class="container section">
+  <h2 data-translate="projects.title">Laboratorios en Desarrollo</h2>
+  <p class="narrative" data-translate="projects.description">
+    Actualmente estoy cultivando mis habilidades técnicas a través de proyectos prácticos. 
+    Como en cualquier investigación científica, comienzo con hipótesis, experimento y aprendo de los resultados.
+  </p>
+
+  <ul class="proj-grid">
+    <li class="proj-card">
+      <h3 data-translate="projects.project1.title">🔬 Portfolio Archipiélago Digital</h3>
+      <p data-translate="projects.project1.description">Este mismo sitio web, desarrollado con HTML5, CSS3 y JavaScript vanilla. Un experimento en diseño interactivo y experiencia de usuario.</p>
+      <div class="tech-tools">
+        <span class="tool">HTML5</span>
+        <span class="tool">CSS3</span>
+        <span class="tool">JavaScript</span>
+        <span class="tool">Responsive</span>
+      </div>
+      <a href="https://github.com/jaaidi0/archipielago-digital" class="treasure-link" target="_blank" data-translate="projects.project1.link">Ver Código</a>
+    </li>
+    
+    <li class="proj-card">
+      <h3 data-translate="projects.project2.title">🖥️ Laboratorio de Sistemas</h3>
+      <p data-translate="projects.project2.description">Configuración y mantenimiento de equipos microinformáticos. Virtualización con Docker y administración básica de Linux.</p>
+      <div class="tech-tools">
+        <span class="tool">Hardware</span>
+        <span class="tool">Docker</span>
+        <span class="tool">Linux</span>
+        <span class="tool">Virtualización</span>
+      </div>
+      <span class="treasure-link soon" data-translate="projects.project2.link">En Práctica</span>
+    </li>
+    
+    <li class="proj-card">
+      <h3 data-translate="projects.project3.title">🌐 Ecosistema WordPress</h3>
+      <p data-translate="projects.project3.description">Desarrollo de sitios web con WordPress: instalación, configuración, personalización de themes y plugins básicos.</p>
+      <div class="tech-tools">
+        <span class="tool">WordPress</span>
+        <span class="tool">PHP</span>
+        <span class="tool">MySQL</span>
+        <span class="tool">SEO</span>
+      </div>
+      <span class="treasure-link soon" data-translate="projects.project3.link">Próximamente</span>
+    </li>
+
+    <li class="proj-card">
+      <h3 data-translate="projects.project4.title">🐍 Scripts de Automatización</h3>
+      <p data-translate="projects.project4.description">Desarrollo de scripts en Python para automatizar tareas repetitivas y procesamiento básico de datos.</p>
+      <div class="tech-tools">
+        <span class="tool">Python</span>
+        <span class="tool">n8n</span>
+        <span class="tool">Automatización</span>
+        <span class="tool">Scripting</span>
+      </div>
+      <span class="treasure-link soon" data-translate="projects.project4.link">En Desarrollo</span>
+    </li>
+  </ul>
+</section>
+
+<section id="contactSection" class="container section">
+  <h2 data-translate="contact.title">Colaboración Científico-Técnica</h2>
+  <p class="narrative" data-translate="contact.description">
+    ¿Buscas a alguien con mentalidad analítica y pasión por el aprendizaje continuo? 
+    Estoy interesado en oportunidades donde pueda aplicar mi perspectiva única como 
+    biólogo en transformación hacia la informática.
+  </p>
+
+  <div class="contact-harbor">
+    <div class="contact-methods">
+      <a href="mailto:eljaa@alum.us.es" class="contact-bottle">
+        <span class="icon">📧</span>
+        <span data-translate="contact.email">eljaa@alum.us.es</span>
+      </a>
+      
+      <a href="https://linkedin.com/in/el-jaidi" class="contact-bottle" target="_blank">
+        <span class="icon">⚓</span>
+        <span data-translate="contact.linkedin">LinkedIn: /el-jaidi</span>
+      </a>
+      
+      <a href="https://github.com/jaaidi0" class="contact-bottle" target="_blank">
+        <span class="icon">🗺️</span>
+        <span data-translate="contact.github">GitHub: jaaidi0</span>
+      </a>
+
+      <div class="contact-bottle">
+        <span class="icon">📱</span>
+        <span data-translate="contact.phone">Tel: 677 099 723</span>
+      </div>
+    </div>
+    
+    <div class="contact-form">
+      <h3 data-translate="contact.formTitle">Enviar Mensaje Directo</h3>
+      <form id="contactForm">
+        <input type="text" name="name" placeholder="Tu nombre" data-translate-placeholder="contact.namePlaceholder" required>
+        <input type="email" name="email" placeholder="Tu email" data-translate-placeholder="contact.emailPlaceholder" required>
+        <textarea name="message" placeholder="Háblame sobre tu proyecto o oportunidad..." data-translate-placeholder="contact.messagePlaceholder" required></textarea>
+        <button type="submit" class="btn-neon" data-translate="contact.submitButton">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script src="translations.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

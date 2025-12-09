@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mostapha El Jaidi - Agro-Tech Developer | Data Science + IA aplicada al sector agrícola. Experto en Python, Linux y Automatización.">
+    <meta name="theme-color" content="#020305">
+    <title>Mostapha El Jaidi | Agro-Tech Developer</title>
+    <link rel="icon" type="image/svg+xml" href="img/barco.svg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader">
+        <div class="loader-content">
+            <h1 class="neon-text" data-t="loader.text">INICIALIZANDO BIOSISTEMA...</h1>
+            <div class="loading-bar"></div>
+        </div>
+    </div>
+
+    <canvas id="neural-bg"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span style="color: var(--neon);">///</span> M.JAIDI
+        </div>
+
+        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="nav-menu" id="nav-menu">
+            <div class="nav-links">
+                <button onclick="closeMenuAndScroll('hero')" data-t="nav.home">INICIO</button>
+                <button onclick="closeMenuAndScroll('featured')" data-t="nav.featured">DESTACADO</button>
+                <button onclick="closeMenuAndScroll('proyectos')" data-t="nav.projects">PROYECTOS</button>
+                <button onclick="closeMenuAndScroll('contacto')" data-t="nav.contact">CONTACTO</button>
+            </div>
+            
+            <div class="controls mobile-controls">
+                <button id="muteBtn" class="icon-btn" aria-label="Sonido">🔊</button>
+                <div class="lang-switch">
+                    <button onclick="setLang('es')" class="lang-active">ES</button>
+                    <button onclick="setLang('en')">EN</button>
+                    <button onclick="setLang('fr')">FR</button>
+                    <button onclick="setLang('ar')">AR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="section hero-container">
+            <div class="profile-wrapper">
+                <div class="holo-ring"></div>
+                <div class="holo-ring ring-2"></div>
+                <img src="img/foto.png" alt="Mostapha El Jaidi" class="profile-img">
+            </div>
+            
+            <div class="hero-text">
+                <h1 data-t="hero.title">Agro-Tech Developer</h1>
+                <p data-t="hero.desc">
+                    <strong>De la biología molecular al código.</strong> Transformo datos agrícolas en inteligencia accionable mediante Python, Data Science e IA.
+                </p>
+                <div class="buttons">
+                    <button class="btn-primary" onclick="scrollToId('featured')" data-t="hero.btn1">VER PROYECTO DESTACADO</button>
+                    <button class="btn-secondary" onclick="window.open('https://github.com/jaaidi0', '_blank')" data-t="hero.btn2">GITHUB</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="featured" class="section featured-section">
+            <h2 class="section-title" data-t="featured.title">PROYECTO DESTACADO</h2>
+            
+            <div class="featured-project">
+                <div class="featured-badge">⭐ FEATURED</div>
+                
+                <div class="featured-content">
+                    <div class="featured-text">
+                        <div class="project-header">
+                            <span class="project-icon">🌦️</span>
+                            <h2 data-t="featured.project_title">AEMET Dashboard Pro</h2>
+                        </div>
+                        
+                        <p class="project-subtitle" data-t="featured.project_subtitle">
+                            Sistema profesional de inteligencia climática en tiempo real
+                        </p>
+                        
+                        <p class="project-description" data-t="featured.project_desc">
+                            Plataforma avanzada que procesa datos de la API de AEMET con técnicas de programación concurrente. 
+                            Optimizado de <span class="highlight">130s a 1.14s</span> mediante ThreadPoolExecutor, 
+                            rate limiting inteligente y caché multinivel.
+                        </p>
+
+                        <div class="metrics">
+                            <div class="metric">
+                                <div class="metric-value">99.1%</div>
+                                <div class="metric-label" data-t="featured.metric1">Mejora rendimiento</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label" data-t="featured.metric2">Tasa de éxito</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">0</div>
+                                <div class="metric-label" data-t="featured.metric3">Errores timeout</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">36+</div>
+                                <div class="metric-label" data-t="featured.metric4">Registros/seg</div>
+                            </div>
+                        </div>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Streamlit</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Plotly</span>
+                            <span class="tech-tag">Threading</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://aemet-dashboard-pro-3s9ay3cnvowfgvrutqvh4w.streamlit.app/" target="_blank" class="btn-link btn-primary-link" data-t="featured.btn_live">
+                                🚀 VER EN VIVO
+                            </a>
+                            <a href="https://github.com/jaaidi0" target="_blank" class="btn-link btn-secondary-link" data-t="featured.btn_code">
+                                💻 CÓDIGO
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="featured-visual">
+                        <div class="visual-header">
+                            <span class="visual-icon">⚡</span>
+                            <h3 data-t="featured.optimizations">Optimizaciones Clave</h3>
+                        </div>
+                        <div class="code-snippet">
+<span class="code-check">✓</span> ThreadPoolExecutor <span class="code-comment">// Paralelismo</span>
+<span class="code-check">✓</span> Token Bucket <span class="code-comment">// Rate limiting</span>
+<span class="code-check">✓</span> Multi-level Cache <span class="code-comment">// Session + TTL</span>
+<span class="code-check">✓</span> Exponential Backoff <span class="code-comment">// Retry</span>
+<span class="code-check">✓</span> Smart Alerts <span class="code-comment">// Alertas IA</span>
+
+<span class="code-comment"># Performance:</span>
+<span class="code-key">load_time:</span> <span class="code-value">1.14s</span> <span class="code-comment">(was 130s)</span>
+<span class="code-key">success:</span> <span class="code-value">100%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="section projects-container">
+            <h2 class="section-title" data-t="projects.title">OTROS PROYECTOS</h2>
+            
+            <div class="grid">
+                <article class="card">
+                    <div class="card-header">
+                        <span class="icon">🌐</span>
+                        <h3 data-t="projects.portfolio_title">Portfolio Interactivo</h3>
+                    </div>
+                    <p data-t="projects.portfolio_desc">
+                        Portfolio personal con efectos avanzados: partículas con Canvas API, sistema multilingüe y animaciones CSS3.
+                    </p>
+                    <div class="tags">
+                        <span>HTML5</span><span>CSS3</span><span>JS</span>
+                    </div>
+                    <a href="https://github.com/jaaidi0/archipielago-digital" target="_blank" class="btn-link" data-t="projects.btn_code">CÓDIGO</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <span class="icon">🤖</span>
+                        <h3 data-t="projects.agro_title">Scripts Agro-Tech</h3>
+                    </div>
+                    <p data-t="projects.agro_desc">
+                        Automatización para análisis de suelos, predicción de cosechas y optimización de riego.
+                    </p>
+                    <div class="tags">
+                        <span>Python</span><span>Bash</span><span>Cron</span>
+                    </div>
+                    <a href="https://github.com/jaaidi0" target="_blank" class="btn-link" data-t="projects.btn_github">GITHUB</a>
+                </article>
+
+                <article class="card">
+                    <div class="card-header">
+                        <span class="icon">🎬</span>
+                        <h3>@botanix.uni</h3>
+                    </div>
+                    <p data-t="projects.botanix_desc">
+                        Creación de contenido educativo automatizado sobre biología con IA generativa.
+                    </p>
+                    <div class="tags">
+                        <span>Python</span><span>FFmpeg</span><span>AI</span>
+                    </div>
+                    <a href="https://tiktok.com/@botanix.uni" target="_blank" class="btn-link" data-t="projects.btn_profile">VER PERFIL</a>
+                </article>
+            </div>
+        </section>
+
+        <section id="contacto" class="section footer">
+            <h2 class="section-title" data-t="contact.title">Conectemos</h2>
+            <p class="contact-intro" data-t="contact.intro">
+                Abierto a colaboraciones en agro-tech, data science o proyectos de impacto social. 
+                <strong data-t="contact.remote">Disponible para trabajo remoto.</strong>
+            </p>
+            <div class="contact-links">
+                <a href="mailto:eljaa@alum.us.es" class="btn-contact" data-t="contact.email">📧 Email</a>
+                <a href="https://linkedin.com/in/el-jaidi" target="_blank" class="btn-contact">💼 LinkedIn</a>
+                <a href="https://github.com/jaaidi0" target="_blank" class="btn-contact">💻 GitHub</a>
+            </div>
+            <p class="copyright">© 2025 Mostapha El Jaidi | <span data-t="contact.copyright">Agro-Tech Developer</span></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

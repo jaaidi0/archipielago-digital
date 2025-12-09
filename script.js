@@ -248,14 +248,14 @@ let menuBtn, navMenu;
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // LOADER MÁS RÁPIDO
+    // LOADER ULTRA RÁPIDO - 500ms
     setTimeout(() => {
         const loader = document.getElementById('loader');
         if(loader) {
             loader.style.opacity = '0';
-            setTimeout(() => { loader.style.display = 'none'; }, 800);
+            setTimeout(() => { loader.style.display = 'none'; }, 400);
         }
-    }, 800); // 800ms en lugar de 1500
+    }, 500); // ⚡ Optimizado de 800ms a 500ms
 
     const savedLang = localStorage.getItem('lang') || 'es';
     setLang(savedLang);

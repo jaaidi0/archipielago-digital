@@ -21,6 +21,24 @@ body {
     line-height: 1.7;
 }
 
+/* ================= SKIP NAVIGATION (A11Y) ================= */
+.skip-nav {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    background: var(--neon);
+    color: #000;
+    padding: 12px 20px;
+    z-index: 10000;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: top 0.3s;
+}
+.skip-nav:focus {
+    top: 10px;
+}
+
 /* ================= ICONOS (Optimized) ================= */
 .project-icon {
     font-size: 4rem;
@@ -89,6 +107,23 @@ body {
 .lang-switch button { background: transparent; border: none; color: #666; padding: 5px 10px; cursor: pointer; font-size: 0.85rem; font-weight: 600; border-radius: 4px; transition: 0.3s; }
 .lang-switch button.lang-active { background: var(--neon); color: #000; }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--neon);
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
 /* ================= HERO ================= */
 .hero-container { min-height: 100vh; display: flex; align-items: center; justify-content: center; gap: 80px; padding: 120px 40px 60px; }
 .profile-wrapper { position: relative; width: 280px; height: 280px; flex-shrink: 0; }
@@ -99,7 +134,7 @@ body {
 @keyframes spin { 100% { transform: rotate(360deg); } }
 
 .hero-text h1 { font-family: var(--font-tech); font-weight: 800; font-size: 4rem; color: #fff; line-height: 1.1; margin-bottom: 20px; background: linear-gradient(90deg, #fff, var(--neon)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero-text p { font-size: 1.25rem; color: #b0b0b0; margin-bottom: 40px; max-width: 600px; font-weight: 300; }
+.hero-text p { font-size: 1.25rem; color: #c9c9c9; margin-bottom: 40px; max-width: 600px; font-weight: 300; }
 .hero-text strong { color: var(--neon); font-weight: 600; }
 
 .buttons { display: flex; gap: 20px; }
@@ -120,7 +155,7 @@ body {
 .project-header { display: flex; align-items: center; margin-bottom: 25px; }
 .project-header h2 { font-weight: 700; font-size: 2.2rem; color: #fff; margin: 0; line-height: 1.2; font-family: var(--font-tech); }
 .project-subtitle { font-size: 1.2rem; color: var(--neon); margin-bottom: 25px; font-weight: 500; }
-.project-description { color: #ccc; margin-bottom: 35px; font-weight: 300; font-size: 1.05rem; }
+.project-description { color: #d4d4d4; margin-bottom: 35px; font-weight: 300; font-size: 1.05rem; }
 .highlight { color: var(--success); font-weight: 600; background: rgba(0, 255, 159, 0.1); padding: 0 5px; border-radius: 4px; }
 
 .metrics { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 35px; }
@@ -152,13 +187,13 @@ body {
 .card:hover { transform: translateY(-8px); border-color: rgba(0,245,255,0.3); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
 .card-header { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
 .card h3 { font-weight: 700; font-size: 1.4rem; color: #fff; margin: 0; font-family: var(--font-tech); }
-.card p { color: #bbb; margin-bottom: 25px; font-size: 1rem; font-weight: 300; flex-grow: 1; }
+.card p { color: #c9c9c9; margin-bottom: 25px; font-size: 1rem; font-weight: 300; flex-grow: 1; }
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 30px; }
 .tags span { background: rgba(255,255,255,0.05); color: #ccc; padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 500; font-family: var(--font-code); }
 
 /* FOOTER */
 .footer { text-align: center; padding: 100px 20px 40px; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 80px; }
-.contact-intro { font-size: 1.3rem; color: #aaa; max-width: 700px; margin: 0 auto 50px; font-weight: 300; }
+.contact-intro { font-size: 1.3rem; color: #c9c9c9; max-width: 700px; margin: 0 auto 50px; font-weight: 300; }
 .contact-links { display: flex; justify-content: center; gap: 25px; margin-bottom: 50px; }
 .btn-contact { padding: 12px 30px; background: rgba(255,255,255,0.03); color: var(--neon); border: 1px solid rgba(0,245,255,0.2); text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s; font-size: 1rem; font-family: var(--font-tech); }
 .btn-contact:hover { background: var(--neon); color: #000; box-shadow: 0 0 20px rgba(0,245,255,0.2); }
@@ -167,16 +202,16 @@ body {
 /* ================= RESPONSIVE (MÓVIL TOTAL) ================= */
 @media (max-width: 768px) {
     /* 1. Navbar Hamburguesa */
-    .menu-toggle { display: block; z-index: 2002; } 
+    .menu-toggle { display: flex; z-index: 2002; } 
     
     .nav-menu {
         position: fixed;
         top: 0; 
         right: 0;
-        left: auto; /* Default LTR anchor */
+        left: auto;
         width: 100%; 
         height: 100vh;
-        background: rgba(5, 7, 12, 0.95); /* Fondo sólido */
+        background: rgba(5, 7, 12, 0.98);
         backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
         
         display: flex;
@@ -184,12 +219,11 @@ body {
         justify-content: center;
         align-items: center;
         
-        /* ⚠️ SOLUCIÓN PANTALLA NEGRA: */
-        visibility: hidden; /* OCULTO POR DEFECTO */
+        visibility: hidden;
         opacity: 0;
         transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.4s, visibility 0.4s;
-        z-index: 2001; /* Encima de todo */
+        z-index: 2001;
     }
 
     .nav-menu.active { 
@@ -203,19 +237,25 @@ body {
     
     .mobile-controls { flex-direction: row; gap: 20px; margin-top: 60px; transform: scale(1.1); }
 
-    /* Animación Botón */
     .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); background: var(--neon); }
     .menu-toggle.active span:nth-child(2) { opacity: 0; }
     .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); background: var(--neon); }
 
     /* Ajustes generales móvil */
-    .hero-container { padding: 120px 20px 60px; }
+    .hero-container { flex-direction: column; padding: 120px 20px 60px; text-align: center; }
     .profile-wrapper { width: 180px; height: 180px; margin: 0 auto; }
     .hero-text h1 { font-size: 2.2rem; }
+    .hero-text p { text-align: center; }
+    .buttons { flex-direction: column; width: 100%; }
+    .btn-primary, .btn-secondary { width: 100%; }
+    
     .project-header, .card-header { flex-direction: column; text-align: center; }
     .project-icon { margin: 0 0 20px 0; }
     .featured-content, .metrics, .grid { grid-template-columns: 1fr; }
-    .card .btn-link, .btn-contact { width: 100%; text-align: center; }
+    .project-actions { flex-direction: column; }
+    .btn-link { width: 100%; }
+    .contact-links { flex-direction: column; }
+    .btn-contact { width: 100%; max-width: 300px; }
 }
 
 /* ================= SOPORTE ÁRABE (RTL) - BLINDADO ================= */
@@ -223,16 +263,15 @@ html[dir="rtl"] body {
     font-family: 'Tajawal', 'Poppins', sans-serif;
 }
 
-html[dir="rtl"] .project-icon { margin: 0 0 20px 0; margin-left: 25px; } 
+html[dir="rtl"] .project-icon { margin: 0 0 20px 25px; margin-right: 0; } 
 html[dir="rtl"] .featured-badge { right: auto; left: 25px; }
 html[dir="rtl"] .code-snippet { text-align: left; direction: ltr; } 
 
 @media (max-width: 768px) {
-    /* ⚠️ ARREGLO FINAL PANTALLA NEGRA RTL */
     html[dir="rtl"] .nav-menu {
         left: 0 !important;
         right: auto !important;
-        transform: translateX(-100%); /* Oculto a la izquierda */
+        transform: translateX(-100%);
     }
     
     html[dir="rtl"] .nav-menu.active {

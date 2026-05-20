@@ -255,23 +255,47 @@
 
         <article class="project-card">
             <div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Shadowing English <span style="color:var(--secondary)">●</span></h3>
-                <p data-key="p2_sub" style="color:var(--secondary); font-weight:600; margin-bottom:20px;">Automated Media Factory Pipeline</p>
+                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">AEMET Dashboard Pro <span style="color:var(--secondary)">●</span></h3>
+                <p data-key="p2_sub" style="color:var(--secondary); font-weight:600; margin-bottom:20px;">Optimización de ingesta climática masiva</p>
                 <p data-key="p2_sol">
-                    Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa y monta vídeo de forma programática y lo distribuye directamente a través de APIs de streaming sin intervención humana.
+                    Dashboard geoespacial e infraestructura ETL robusta conectada a la API AEMET OpenData. Monitorea y calcula índices térmicos y agroclimáticos avanzados (THI, Humidex, Punto de Rocío) integrando hilos de concurrencia y una caché inteligente para neutralizar caídas de servicios externos.
+                </p>
+                <div style="margin-top: 20px; display: flex; gap: 5px; flex-wrap: wrap;">
+                    <a href="https://aemet-dashboard-pro-3s9ay3cnvowfgvrutqvh4w.streamlit.app" target="_blank" class="btn-link" data-key="p2_link_demo">Ver Demo en Vivo →</a>
+                    <a href="https://github.com/jaaidi0/aemet-dashboard-pro" target="_blank" class="btn-link" data-key="p2_link_repo">Ver Repositorio →</a>
+                </div>
+            </div>
+            <div class="metric-grid-box">
+                <div class="metric-box">
+                    <div class="metric-val">1.14s</div>
+                    <div class="metric-label" data-key="p2_m1_label">Latencia Optimizada</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">99.1%</div>
+                    <div class="metric-label" data-key="p2_m2_label">Mejora de Rendimiento</div>
+                </div>
+            </div>
+        </article>
+
+        <article class="project-card">
+            <div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Shadowing English <span style="color:var(--accent)">●</span></h3>
+                <p data-key="p3_sub" style="color:var(--accent); font-weight:600; margin-bottom:20px;">Automated Media Factory Pipeline</p>
+                <p data-key="p3_sol">
+                    Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa, edita y monta clips de vídeo de forma programática y los distribuye con metadatos optimizados SEO a través de APIs de streaming sin intervención humana.
                 </p>
                 <div style="margin-top: 20px;">
-                    <a href="https://github.com/jaaidi0" target="_blank" class="btn-link" data-key="p2_link_repo">Ver Repositorio →</a>
+                    <a href="https://github.com/jaaidi0" target="_blank" class="btn-link" data-key="p3_link_repo">Ver Repositorio →</a>
                 </div>
             </div>
             <div class="metric-grid-box">
                 <div class="metric-box">
                     <div class="metric-val">6 min</div>
-                    <div class="metric-label" data-key="p2_m1_label">Tiempo de Renderizado</div>
+                    <div class="metric-label" data-key="p3_m1_label">Tiempo de Renderizado</div>
                 </div>
                 <div class="metric-box">
                     <div class="metric-val">100%</div>
-                    <div class="metric-label" data-key="p2_m2_label">Automatización End-to-End</div>
+                    <div class="metric-label" data-key="p3_m2_label">Automatización End-to-End</div>
                 </div>
             </div>
         </article>
@@ -304,11 +328,17 @@
                 p1_link_doc: "Documentación →",
                 p1_m1_label: "Fungicidas (Viticultura)",
                 p1_m2_label: "Producción Invernaderos",
-                p2_sub: "Automated Media Factory Pipeline",
-                p2_sol: "Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa y monta vídeo de forma programática y lo distribuye directamente a través de APIs de streaming sin intervención humana.",
+                p2_sub: "Optimización de ingesta climática masiva",
+                p2_sol: "Dashboard geoespacial e infraestructura ETL robusta conectada a la API AEMET OpenData. Monitorea y calcula índices térmicos y agroclimáticos avanzados (THI, Humidex, Punto de Rocío) integrando hilos de concurrencia y una caché inteligente para neutralizar caídas de servicios externos.",
+                p2_link_demo: "Ver Demo en Vivo →",
                 p2_link_repo: "Ver Repositorio →",
-                p2_m1_label: "Tiempo de Renderizado",
-                p2_m2_label: "Automatización End-to-End"
+                p2_m1_label: "Latencia Optimizada",
+                p2_m2_label: "Mejora de Rendimiento",
+                p3_sub: "Automated Media Factory Pipeline",
+                p3_sol: "Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa, edita y monta clips de vídeo de forma programática y los distribuye con metadatos optimizados SEO a través de APIs de streaming sin intervención humana.",
+                p3_link_repo: "Ver Repositorio →",
+                p3_m1_label: "Tiempo de Renderizado",
+                p3_m2_label: "Automatización End-to-End"
             },
             en: {
                 nav_projects: "Projects",
@@ -331,11 +361,17 @@
                 p1_link_doc: "Documentation →",
                 p1_m1_label: "Fungicides (Viticulture)",
                 p1_m2_label: "Greenhouse Yield",
-                p2_sub: "Automated Media Factory Pipeline",
-                p2_sol: "End-to-end automated multimedia ETL pipeline construction. It programmatically processes and edits video content, deploying it directly via streaming APIs with zero manual intervention.",
+                p2_sub: "Massive climate ingestion optimization",
+                p2_sol: "Geospatial dashboard and robust ETL pipeline connected to AEMET OpenData API. Monitors and computes advanced thermal and agrometeorological indices (THI, Humidex, Dew Point) integrating concurrent threading and smart data caching to neutralize upstream API bottlenecks.",
+                p2_link_demo: "Live Demo →",
                 p2_link_repo: "View Repository →",
-                p2_m1_label: "Rendering Time",
-                p2_m2_label: "End-to-End Automation"
+                p2_m1_label: "Optimized Latency",
+                p2_m2_label: "Performance Boost",
+                p3_sub: "Automated Media Factory Pipeline",
+                p3_sol: "End-to-end automated multimedia ETL pipeline construction. It programmatically processes and edits video content, deploying it with SEO-optimized metadata via streaming APIs with zero manual intervention.",
+                p3_link_repo: "View Repository →",
+                p3_m1_label: "Rendering Time",
+                p3_m2_label: "End-to-End Automation"
             }
         };
 

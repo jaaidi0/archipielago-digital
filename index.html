@@ -4,176 +4,321 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>El Mostapha Jaaidi | Agro-Tech Data Engineer · IoT Systems</title>
+    <title>El Mostapha Jaaidi | Agro-Tech Data Engineer & IoT Systems</title>
 
     <meta name="description" content="Sistemas IoT y Data Engineering para agricultura inteligente. Sensor → Datos → Decisiones en tiempo real.">
     <meta name="author" content="El Mostapha Jaaidi">
 
-    <!-- OPEN GRAPH (COMPARTIR PRO) -->
     <meta property="og:title" content="El Mostapha Jaaidi | Agro-Tech Developer">
     <meta property="og:description" content="Convirtiendo datos agrícolas en decisiones reales en producción.">
     <meta property="og:image" content="https://jaaidi0.github.io/img/foto.png">
     <meta property="og:url" content="https://jaaidi0.github.io">
     <meta property="og:type" content="profile">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #05080f;
-            color: #f8fafc;
-            margin: 0;
+        :root {
+            --bg-color: #05080f;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border-color: rgba(255, 255, 255, 0.08);
+            --primary: #00ff9d;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* HERO RESPONSIVO Y SEGURO */
         .hero {
             display: flex;
+            flex-direction: column-reverse; /* Mobile first */
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            gap: 60px;
-            padding: 50px;
+            gap: 40px;
+            padding: 40px 20px;
+            box-sizing: border-box;
         }
 
         .hero-text {
-            max-width: 600px;
+            max-width: 650px;
+            text-align: center;
         }
 
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.05em;
         }
 
         .tagline {
-            color: #00ff9d;
+            color: var(--primary);
             font-weight: 600;
-            margin-bottom: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
         }
 
         .subtitle {
-            color: #94a3b8;
-            margin-bottom: 20px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        /* BOTONES MODERNOS */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 25px;
-            background: #00ff9d;
+            width: 80%;
+            max-width: 200px;
+            padding: 14px 24px;
+            background: var(--primary);
             color: #000;
             border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            margin-right: 10px;
+            font-weight: 700;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 255, 157, 0.4);
         }
 
         .btn-link {
-            color: #00ff9d;
+            color: var(--primary);
             text-decoration: none;
+            font-weight: 600;
+            padding: 10px;
+        }
+
+        .btn-link:hover {
+            text-decoration: underline;
         }
 
         .photo {
-            width: 260px;
-            height: 260px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #00ff9d;
-            box-shadow: 0 0 30px rgba(0,255,157,0.2);
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 30px rgba(0, 255, 157, 0.15);
         }
 
+        /* SECCIONES Y TARJETAS */
         .section {
-            padding: 80px 20px;
-            max-width: 1000px;
+            padding: 60px 20px;
+            max-width: 900px;
             margin: auto;
         }
 
+        h2 {
+            font-size: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
         .card {
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 25px;
-            margin-bottom: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            margin-bottom: 25px;
             border-radius: 12px;
+            backdrop-filter: blur(5px);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+            color: var(--text-main);
+        }
+
+        .metrics-grid {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .metric-box {
+            background: rgba(0, 255, 157, 0.05);
+            border-left: 3px solid var(--primary);
+            padding: 10px 20px;
+            border-radius: 0 8px 8px 0;
         }
 
         .metric {
-            color: #00ff9d;
-            font-size: 1.5rem;
-            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .tech-stack {
+            color: var(--primary);
+            font-family: monospace;
+            font-size: 0.95rem;
+            margin: 15px 0;
+        }
+
+        /* LISTAS */
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        ul li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        /* MEDIA QUERIES PARA PANTALLAS GRANDES */
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                gap: 60px;
+                padding: 50px;
+            }
+
+            .hero-text {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: 3.8rem;
+            }
+
+            .photo {
+                width: 280px;
+                height: 280px;
+            }
+
+            .btn-container {
+                flex-direction: row;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<section class="hero">
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>EL MOSTAPHA JAAIDI</h1>
+            <div class="tagline">Sistemas IoT reales que convierten señales agrícolas en decisiones automáticas</div>
+            <div class="subtitle">Agro-Tech Developer · Data Engineer · Cloud & DevOps</div>
+            <p class="hero-p">
+                Conecto la complejidad de la biología vegetal con la robustez de las arquitecturas de datos. Diseño infraestructuras extremo a extremo: desde la calibración de hardware en el campo hasta pipelines resilientes en producción.
+            </p>
+            <div class="btn-container">
+                <a href="#projects" class="btn">Ver Proyectos</a>
+                <a href="mailto:eljaa@alum.us.es" class="btn-link">📩 Contactar →</a>
+            </div>
+        </div>
+        <img src="img/foto.png" alt="Fotografía profesional de El Mostapha Jaaidi" class="photo">
+    </section>
 
-    <div class="hero-text">
-        <h1>EL MOSTAPHA JAAIDI</h1>
+    <section class="section" id="projects">
+        <h2>🚀 Proyectos de Infraestructura y Datos</h2>
 
-        <div class="tagline">
-            Sistemas IoT reales que convierten datos agrícolas en decisiones automáticas
+        <div class="card">
+            <h3>AgroSentinel — Monitoreo Agroclimático de Precisión</h3>
+            <p>Infraestructura IoT y pipeline distribuido diseñado para capturar y limpiar variables dinámicas en tiempo real, aislando de forma automática los fallos de hardware en el campo.</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric">+25%</div>
+                    <div class="metric-label">Producción en Invernadero</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric">-40%</div>
+                    <div class="metric-label">Uso de Fungicidas (Alertas VPD)</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric">99.1%</div>
+                    <div class="metric-label">Reducción de Latencia</div>
+                </div>
+            </div>
+
+            <p><strong>Enfoque de Data Quality:</strong> Orquestación de logs automáticos reactivos (<code>SENSOR_FAIL</code>) ante anomalías del hardware (por ejemplo, pH imposibles de 15.92), activando modos de depuración remota de voltajes ADC sin desplazamientos físicos.</p>
+            <div class="tech-stack">Stack: Python · FastAPI · ESP32 · TimescaleDB · Docker · Multi-Cloud</div>
+            <p><a href="https://linkedin.com/in/el-jaidi" style="color: var(--primary);" target="_blank" rel="noopener">Ver Live Demo & Arquitectura →</a></p>
         </div>
 
-        <div class="subtitle">
-            Agro-Tech Developer · Data Engineering · IoT · Climate Intelligence
+        <div class="card">
+            <h3>Shadowing English — Automated Media Factory</h3>
+            <p>Diseño y construcción de un pipeline ETL multimedia totalmente automatizado para la generación continua y optimizada de contenido educativo distribuido en plataformas de video streaming.</p>
+            
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <div class="metric">6 min</div>
+                    <div class="metric-label">Tiempo de Render (Antes: 2 horas)</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric">0</div>
+                    <div class="metric-label">Intervención Manual Requerida</div>
+                </div>
+            </div>
+
+            <p><strong>Solución Técnica:</strong> Integración de scripts estructurados para el procesamiento y montaje de video programático, síntesis de voz mediante text-to-speech y distribución automatizada con indexación SEO mediante APIs oficiales.</p>
+            <div class="tech-stack">Stack: Python · MoviePy · Edge TTS · YouTube Data API v3 · Docker · Bash</div>
+            <p><a href="https://github.com/jaaidi0" style="color: var(--primary);" target="_blank" rel="noopener">Ver Repositorio de Automatización →</a></p>
         </div>
+    </section>
 
-        <p>
-            Diseño infraestructuras que convierten señales del campo en decisiones automatizadas.  
-            Desde sensores ESP32 hasta pipelines de datos en producción.
-        </p>
+    <section class="section">
+        <h2>🧠 Ingeniería & Core Competences</h2>
+        <ul>
+            <li><strong>Data Engineering & Pipelines:</strong> Flujos ETL robustos, arquitecturas con optimización de latencia, manejo avanzado de Pandas y persistencia en series temporales (TimescaleDB).</li>
+            <li><strong>IoT & Resiliencia de Hardware:</strong> Integración de microcontroladores (ESP32/ESP8266), calibración avanzada de sensores en entornos hostiles y observabilidad proactiva frente a datos corruptos.</li>
+            <li><strong>DevOps & Computación en la Nube:</strong> Contenerización aislada con Docker, administración de entornos Linux (Ubuntu), despliegues Multi-Cloud e integración continua mediante Git/GitHub.</li>
+            <li><strong>Algoritmia Aplicada:</strong> Modelos basados en fisiología vegetal (cálculos en tiempo real de VPD) e inyección de automatizaciones de IA orientadas al negocio.</li>
+        </ul>
+    </section>
 
-        <a href="#projects" class="btn">Ver Proyectos</a>
-        <a href="mailto:eljaa@alum.us.es" class="btn-link">📩 Contactar →</a>
-    </div>
-
-    <img src="img/foto.png" class="photo">
-
-</section>
-
-<section class="section" id="projects">
-    <h2>🚀 Proyectos</h2>
-
-    <div class="card">
-        <h3>AgroSentinel</h3>
-        <p>Sistema IoT en producción para monitorización agrícola.</p>
-        
-        <div class="metric">+25% producción</div>
-        <div class="metric">-40% fungicidas</div>
-
-        <p>
-            Sensores → Backend → Base de datos → Dashboard en tiempo real.
-        </p>
-
-        <a href="#">Ver sistema</a>
-    </div>
-
-    <div class="card">
-        <h3>AEMET Dashboard</h3>
-        <p>Pipeline ETL para datos climáticos.</p>
-
-        <div class="metric">99.1% mejora de rendimiento</div>
-
-        <a href="https://github.com/jaaidi0/aemet-dashboard-pro">Ver repo</a>
-    </div>
-
-</section>
-
-<section class="section">
-    <h2>🧠 Qué aporto</h2>
-
-    <ul>
-        <li>IoT agrícola (ESP32)</li>
-        <li>Data Engineering (ETL, pipelines)</li>
-        <li>Automatización end-to-end</li>
-        <li>Dashboards operativos</li>
-    </ul>
-</section>
-
-<section class="section">
-    <h2>📩 Contacto</h2>
-
-    <p>Email: eljaa@alum.us.es</p>
-    <p><a href="https://linkedin.com/in/el-jaidi">LinkedIn</a></p>
-</section>
+    <section class="section" style="text-align: center;">
+        <h2>📩 Conectemos</h2>
+        <p>¿Buscas optimizar tu infraestructura de datos, sensorizar entornos críticos o automatizar pipelines de backend?</p>
+        <p><strong>Email:</strong> <a href="mailto:eljaa@alum.us.es" style="color: var(--primary); text-decoration: none;">eljaa@alum.us.es</a></p>
+        <p><a href="https://linkedin.com/in/el-jaidi" class="btn" target="_blank" rel="noopener">LinkedIn Perfil</a></p>
+    </section>
+</main>
 
 </body>
 </html>

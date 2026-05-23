@@ -1,429 +1,206 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="El Mostapha Jaaidi - Agro-Tech Developer & Data Systems Engineer. Especialista en IoT, Python y IA para agricultura de precisión.">
-    <meta name="keywords" content="AgroTech, IoT, Python, Data Science, MQTT, TimescaleDB, Agricultura de Precisión, Data Engineer">
-    <meta name="author" content="El Mostapha Jaaidi">
-    <meta name="theme-color" content="#05080f">
-    <meta property="og:site_name" content="Agro-Tech Engineering Portfolio">
-    <meta property="og:title" content="El Mostapha Jaaidi | Agro-Tech Developer">
-    <meta property="og:description" content="Diseño sistemas IoT y plataformas de datos que anticipan plagas y optimizan cultivos.">
-    <meta property="og:image" content="img/foto.png">
-    <meta property="og:type" content="profile">
-    <title>El Mostapha Jaaidi | Agro-Tech Developer</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "El Mostapha Jaaidi",
-      "jobTitle": "Agro-Tech Developer & Data Systems Engineer",
-      "knowsAbout": ["IoT", "Python", "Agro-Data Intelligence", "MQTT", "Docker", "TimescaleDB"],
-      "url": "https://jaaidi0.github.io",
-      "sameAs": [
-        "https://linkedin.com/in/el-jaidi",
-        "https://github.com/jaaidi0"
-      ]
-    }
-    </script>
-    <style>
-        :root {
-            --bg: #05080f;
-            --surface: #0e121b;
-            --surface-hover: #161b26;
-            --primary: #00ff9d;
-            --primary-glow: rgba(0, 255, 157, 0.15);
-            --secondary: #38bdf8;
-            --accent: #a855f7; 
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: rgba(255,255,255,0.08);
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed; top: 0; width: 100%; z-index: 1000;
-            padding: 18px 5%;
-            background: rgba(5, 8, 15, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .brand { font-weight: 800; font-size: 1.1rem; letter-spacing: -0.5px; color: #fff; }
-        .brand span { color: var(--primary); }
-        .nav-items a { color: var(--text-muted); text-decoration: none; margin-left: 30px; font-size: 0.9rem; transition: 0.2s; }
-        .nav-items a:hover { color: var(--primary); }
-        .lang-switch { background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 4px; border-radius: 6px; display: flex; gap: 4px; margin-left: 20px; }
-        .lang-btn { background: transparent; border: none; color: var(--text-muted); padding: 4px 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer; border-radius: 4px; transition: 0.3s; }
-        .lang-btn.active { background: var(--primary); color: #000; }
-        
-        /* --- HERO --- */
-        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 20px 80px; position: relative; }
-        .container { max-width: 1150px; width: 100%; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 70px; align-items: center; }
-        .origin-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 8px 16px; border-radius: 20px;
-            background: rgba(0, 255, 157, 0.05); color: var(--primary);
-            font-size: 0.75rem; font-weight: 700; margin-bottom: 24px;
-            border: 1px solid rgba(0, 255, 157, 0.2); letter-spacing: 0.5px; text-transform: uppercase;
-        }
-        h1 { font-size: clamp(3rem, 5.5vw, 4.5rem); line-height: 1.05; font-weight: 800; margin-bottom: 15px; color: #fff; }
-        .role-subtitle { font-size: 1.4rem; color: var(--text-muted); margin-bottom: 25px; }
-        .role-subtitle span { color: var(--secondary); font-weight: 600; }
-        
-        /* --- AVAILABILITY BANNER --- */
-        .availability-banner {
-            background: linear-gradient(90deg, rgba(0,255,157,0.05), rgba(56,189,248,0.05));
-            border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-            padding: 20px 0; margin-bottom: 40px;
-        }
-        .banner-content { max-width: 1150px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        .status-pill { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--primary); font-size: 0.85rem; }
-        
-        /* --- ARCHITECTURE DIAGRAM --- */
-        .architecture-diagram { background: rgba(0,0,0,0.4); border: 1px solid rgba(0,255,135,0.2); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; position: relative; overflow: hidden; }
-        .architecture-diagram::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--primary); opacity: 0.3; animation: scan 3s linear infinite; }
-        @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-        
-        .arch-layer { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 12px; margin-bottom: 8px; border-left: 3px solid var(--text-muted); text-align: left; }
-        .arch-layer.hardware { border-left-color: var(--accent); }
-        .arch-layer.backend { border-left-color: var(--primary); }
-        .arch-layer.cloud { border-left-color: var(--secondary); }
-        .layer-label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 5px; font-weight: 700; }
-        .components { display: flex; gap: 6px; flex-wrap: wrap; }
-        .component { background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; border: 1px solid var(--border); }
-        .arch-arrow { text-align: center; color: var(--primary); font-size: 1.2rem; margin: 2px 0; }
-        
-        /* --- PROJECT CARDS --- */
-        .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 45px; margin-bottom: 50px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; transition: 0.3s; align-items: center; }
-        .project-card:hover { border-color: var(--primary-glow); transform: translateY(-5px); }
-        .metric-grid-box { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        .metric-box { background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; text-align: center; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; }
-        .metric-val { font-size: 2.8rem; font-weight: 800; color: var(--primary); line-height: 1; }
-        .metric-label { font-size: 0.8rem; text-transform: uppercase; margin-top: 10px; letter-spacing: 1px; color: var(--text-muted); }
-        
-        .btn-primary { background: var(--primary); color: #05080f; padding: 14px 34px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 20px var(--primary-glow); transition: 0.2s; cursor: pointer; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px var(--primary-glow); }
-        
-        .btn-link { display: inline-block; margin-top: 15px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-right: 20px; }
-        .btn-link:hover { text-decoration: underline; }
-        
-        /* --- CANVAS & IMGS --- */
-        #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-        .hero-img { width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        @media (max-width: 900px) { 
-            .container, .project-card { grid-template-columns: 1fr; text-align: center; } 
-            .architecture-diagram { display: none; } 
-            .btn-link { margin: 10px 10px 0 10px; }
-        }
-        @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
-    </style>
-</head>
-<body>
-    <div id="leaf-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:9999; transition:opacity 1s;">
-        <canvas id="leaf-canvas"></canvas>
+<!-- ========================= -->
+<!-- HERO DESCRIPTION -->
+<!-- ========================= -->
+
+<p data-key="hero_desc">
+    Transformo señales biológicas en decisiones basadas en datos. 
+    Diseño infraestructuras IoT y sistemas distribuidos para 
+    <strong>monitorización ambiental, automatización y agricultura de precisión.</strong>
+</p>
+
+<!-- ========================= -->
+<!-- META DESCRIPTION -->
+<!-- ========================= -->
+
+<meta name="description" content="El Mostapha Jaaidi - Agro-Tech Developer & Data Systems Engineer. Especialista en IoT, Python, automatización y monitorización ambiental para agricultura de precisión.">
+
+<meta property="og:description" content="Diseño sistemas IoT, pipelines de datos y plataformas de monitorización ambiental para agricultura de precisión.">
+
+<!-- ========================= -->
+<!-- AGROSENTINEL CARD -->
+<!-- REEMPLAZA TODO EL BLOQUE -->
+<!-- ========================= -->
+
+<article class="project-card">
+    <div>
+        <h3 style="font-size: 1.8rem; margin-bottom: 10px;">
+            AgroSentinel IoT <span style="color:var(--primary)">●</span>
+        </h3>
+
+        <p data-key="p1_sub" style="color:var(--primary); font-weight:600; margin-bottom:20px;">
+            Plataforma IoT para monitorización ambiental y telemetría distribuida
+        </p>
+
+        <div style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px; font-family: monospace; font-size: 0.8rem; margin-bottom: 25px; text-align: left; box-shadow: inset 0 0 15px rgba(0,0,0,0.5);">
+
+            <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border); padding-bottom: 8px; margin-bottom: 12px; color: var(--text-muted);">
+                <span data-key="scada_title">📊 TELEMETRÍA EN VIVO (v9.2.3)</span>
+                <span style="color: var(--primary); animation: pulse 1s infinite;">
+                    ● LINK ACTIVE
+                </span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 15px;">
+
+                <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+                    <span style="color: var(--text-muted); font-size: 0.65rem; display: block;">
+                        TEMP. AGUA
+                    </span>
+
+                    <span style="font-size: 1.15rem; font-weight: bold; color: #fff;">
+                        21.1 °C
+                    </span>
+                </div>
+
+                <div style="background: rgba(0,255,157,0.05); padding: 8px; border-radius: 6px; border: 1px solid rgba(0,255,157,0.2);">
+                    <span style="color: var(--primary); font-size: 0.65rem; display: block;">
+                        🧪 FLEET pH INDEX
+                    </span>
+
+                    <span style="font-size: 1.15rem; font-weight: bold; color: var(--primary);">
+                        7.14 pH
+                    </span>
+                </div>
+
+                <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
+                    <span style="color: var(--text-muted); font-size: 0.65rem; display: block;">
+                        CONDUCTIVIDAD
+                    </span>
+
+                    <span style="font-size: 1.15rem; font-weight: bold; color: var(--secondary);">
+                        1187.2 µS/cm
+                    </span>
+                </div>
+            </div>
+
+            <div style="background: rgba(0,255,157,0.05); border-left: 3px solid var(--primary); padding: 10px; border-radius: 0 6px 6px 0; margin-bottom: 15px;">
+
+                <div style="display: flex; justify-content: space-between; font-weight: bold; color: var(--primary); margin-bottom: 4px;">
+                    <span>📍 ETSIA_SEVILLA_NODO_03</span>
+                    <span>🟢 HEALTHY</span>
+                </div>
+
+                <span style="color: var(--text-muted); font-size: 0.75rem;">
+                    Agua: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s atrás)
+                </span>
+            </div>
+
+            <div style="background: rgba(0,255,157,0.03); border: 1px dashed rgba(0,255,157,0.2); padding: 10px; border-radius: 6px; color: var(--primary); font-size: 0.7rem;">
+
+                <span style="font-weight: bold; display: block; margin-bottom: 4px;">
+                    ✓ SYSTEM STATUS
+                </span>
+
+                • Stable telemetry ingestion pipeline<br>
+                • Real-time sensor monitoring active<br>
+                • Distributed sensor infrastructure operational
+            </div>
+        </div>
+
+        <p data-key="p1_sol">
+            <strong>De la biología al Cloud:</strong>
+            Plataforma IoT distribuida para monitorización ambiental en tiempo real.
+            Diseñada para automatizar la ingesta de sensores, aislar fallos de hardware
+            mediante eventos <code>SENSOR_FAIL</code> y centralizar telemetría agroclimática
+            sobre una arquitectura escalable basada en Python y TimescaleDB.
+        </p>
+
+        <div style="margin-top: 20px; display: flex; gap: 5px; flex-wrap: wrap;">
+            <a href="https://agrosentinel-1.onrender.com" target="_blank" class="btn-link">
+                Ver Demo en Vivo →
+            </a>
+
+            <a href="https://github.com/jaaidi0/AgroSentinel/blob/main/README.md" target="_blank" class="btn-link">
+                Documentación →
+            </a>
+        </div>
     </div>
-    <nav>
-        <div class="brand">EL MOSTAPHA <span>JAAIDI</span></div>
-        <div style="display: flex; align-items: center;">
-            <div class="nav-items">
-                <a href="#projects" data-key="nav_projects">Proyectos</a>
-                <a href="https://linkedin.com/in/el-jaidi" target="_blank">LinkedIn</a>
-            </div>
-            <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLanguage('es')">ES</button>
-                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+
+    <div class="metric-grid-box">
+
+        <div class="metric-box">
+            <div class="metric-val">24/7</div>
+
+            <div class="metric-label">
+                Telemetría Continua
             </div>
         </div>
-    </nav>
-    <canvas id="particles"></canvas>
-    
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="origin-badge">
-                    <div class="live-dot" style="width:8px; height:8px; background:var(--primary); border-radius:50%; animation: pulse 2s infinite;"></div> 
-                    <span data-key="hero_badge">Biología → Ingeniería IoT</span>
-                </div>
-                
-                <h1>EL MOSTAPHA JAAIDI</h1>
-                <div class="role-subtitle">
-                    <span data-key="role">Agro-Tech Developer</span> & Data Engineer
-                </div>
-                
-                <p data-key="hero_desc">
-                    Transformo señales biológicas en decisiones estratégicas. Diseño infraestructuras IoT y sistemas distribuidos que 
-                    <strong>anticipan riesgos y optimizan el riego</strong> eliminando la incertidumbre del campo.
-                </p>
-                <a href="#projects" class="btn-primary" data-key="btn_projects">Ver Casos de Estudio</a>
-            </div>
-            <div class="hero-img-wrapper">
-                <img src="img/foto.png" alt="Mostapha Jaaidi" class="hero-img" onerror="this.src='https://ui-avatars.com/api/?name=Mostapha+Jaidi&background=0e121b&color=00ff9d&size=400'">
+
+        <div class="metric-box">
+            <div class="metric-val">MQTT</div>
+
+            <div class="metric-label">
+                Arquitectura Distribuida
             </div>
         </div>
-    </section>
+    </div>
+</article>
 
-    <section class="availability-banner">
-        <div class="banner-content">
-            <div class="status-pill">
-                <div style="width:10px; height:10px; background:var(--primary); border-radius:50%; box-shadow: 0 0 10px var(--primary);"></div>
-                <span data-key="banner_status">DISPONIBLE INMEDIATAMENTE · Presencial · Híbrido · Remoto</span>
-            </div>
-            <div style="font-size: 0.9rem; color: var(--text-muted);" data-key="banner_specialty">
-                🎯 Especialidad: Backend, IoT & Automation en Sevilla o Remoto
-            </div>
-        </div>
-    </section>
+<!-- ========================= -->
+<!-- AEMET POLISHED -->
+<!-- ========================= -->
 
-    <section id="projects" style="max-width: 1150px; margin: 0 auto; padding: 60px 20px;">
-        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 50px;" data-key="cases_title">Casos de Estudio</h2>
-        
-        <article class="project-card">
-            <div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">AgroSentinel IoT <span style="color:var(--primary)">●</span></h3>
-                <p data-key="p1_sub" style="color:var(--primary); font-weight:600; margin-bottom:20px;">Monitorización microclimática predictiva</p>
-                
-                <div style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px; font-family: monospace; font-size: 0.8rem; margin-bottom: 25px; text-align: left; box-shadow: inset 0 0 15px rgba(0,0,0,0.5);">
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border); padding-bottom: 8px; margin-bottom: 12px; color: var(--text-muted);">
-                        <span data-key="scada_title">📊 TELEMETRÍA EN VIVO (v9.2.3)</span>
-                        <span style="color: var(--primary); animation: pulse 1s infinite;">● LINK ACTIVE</span>
-                    </div>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 15px;">
-                        <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
-                            <span style="color: var(--text-muted); font-size: 0.65rem; display: block;" data-key="scada_t1">AVG TEMPERATURE</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: #fff;">7.5 °C <span style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;" data-key="scada_w"> (Agua)</span></span>
-                        </div>
-                        <div style="background: rgba(239, 68, 68, 0.05); padding: 8px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
-                            <span style="color: #ef4444; font-size: 0.65rem; display: block;">🚀 FLEET pH INDEX</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: #f87171;">15.92 pH</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
-                            <span style="color: var(--text-muted); font-size: 0.65rem; display: block;" data-key="scada_t2">CONDUCTIVITY</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: var(--secondary);">482.2 µS/cm</span>
-                        </div>
-                    </div>
+<p data-key="p2_sol">
+    Dashboard geoespacial e infraestructura ETL conectada a la API AEMET OpenData.
+    Procesa y calcula índices agroclimáticos avanzados como THI, Humidex y Punto de Rocío
+    utilizando concurrencia, caché inteligente y pipelines resilientes para minimizar
+    latencia y tolerar interrupciones de servicios externos.
+</p>
 
-                    <div style="background: rgba(245, 158, 11, 0.05); border-left: 3px solid #f59e0b; padding: 10px; border-radius: 0 6px 6px 0; margin-bottom: 15px;">
-                        <div style="display: flex; justify-content: space-between; font-weight: bold; color: #f59e0b; margin-bottom: 4px;">
-                            <span>📍 ETSIA_SEVILLA_NODO_01</span>
-                            <span>🟡 DEGRADED</span>
-                        </div>
-                        <span style="color: var(--text-muted); font-size: 0.75rem;" data-key="scada_node_metrics">Agua: 7.5°C | pH: 15.92 pH | O₂: ❌ Sin dato | EC: 482.2µS/cm (🕐 0s atrás)</span>
-                    </div>
+<!-- ========================= -->
+<!-- SHADOWING ENGLISH POLISHED -->
+<!-- ========================= -->
 
-                    <div style="background: rgba(239, 68, 68, 0.03); border: 1px dashed rgba(239, 68, 68, 0.2); padding: 10px; border-radius: 6px; color: #f87171; font-size: 0.7rem;">
-                        <span style="font-weight: bold; display: block; margin-bottom: 4px; color: #ef4444;" data-key="scada_alert_title">🚨 RECENT FORENSIC ALERTS (O₂ CRITICAL):</span>
-                        • [CRITICAL] ETSIA_SEVILLA_NODO_01: O2_LETHAL_LIMIT (0:47:30)<br>
-                        • [CRITICAL] ETSIA_SEVILLA_NODO_01: O2_LETHAL_LIMIT (0:42:30)<br>
-                        • [WARNING] pH Sensor Requires Lab Recalibration (Value out of range)
-                    </div>
-                </div>
+<p data-key="p3_sol">
+    Pipeline multimedia automatizado para procesamiento y distribución de contenido.
+    Orquesta flujos ETL de vídeo mediante Python, automatizando renderizado, edición,
+    generación de metadatos y publicación programática en plataformas digitales.
+</p>
 
-                <p data-key="p1_sol">
-                    <strong>De la biología al Cloud:</strong> Infraestructura distribuida que aísla fallos de hardware mediante flujos de <code>SENSOR_FAIL</code> remotos. Reduce un 40% el uso de fungicidas basándose en el Déficit de Presión de Vapor (VPD) en tiempo real.
-                </p>
-                <div style="margin-top: 20px; display: flex; gap: 5px; flex-wrap: wrap;">
-                    <a href="https://agrosentinel-1.onrender.com" target="_blank" class="btn-link" data-key="p1_link_demo">Ver Demo en Vivo →</a>
-                    <a href="https://github.com/jaaidi0/AgroSentinel/blob/main/README.md" target="_blank" class="btn-link" data-key="p1_link_doc">Documentación →</a>
-                </div>
-            </div>
-            <div class="metric-grid-box">
-                <div class="metric-box">
-                    <div class="metric-val">-40%</div>
-                    <div class="metric-label" data-key="p1_m1_label">Fungicidas (Viticultura)</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-val">+25%</div>
-                    <div class="metric-label" data-key="p1_m2_label">Producción Invernaderos</div>
-                </div>
-            </div>
-        </article>
+<!-- ========================= -->
+<!-- METRICAS MÁS SERIAS -->
+<!-- ========================= -->
 
-        <article class="project-card">
-            <div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">AEMET Dashboard Pro <span style="color:var(--secondary)">●</span></h3>
-                <p data-key="p2_sub" style="color:var(--secondary); font-weight:600; margin-bottom:20px;">Optimización de ingesta climática masiva</p>
-                <p data-key="p2_sol">
-                    Dashboard geoespacial e infraestructura ETL robusta conectada a la API AEMET OpenData. Monitorea y calcula índices térmicos y agroclimáticos avanzados (THI, Humidex, Punto de Rocío) integrando hilos de concurrencia y una caché inteligente para neutralizar caídas de servicios externos.
-                </p>
-                <div style="margin-top: 20px; display: flex; gap: 5px; flex-wrap: wrap;">
-                    <a href="https://aemet-dashboard-pro-3s9ay3cnvowfgvrutqvh4w.streamlit.app" target="_blank" class="btn-link" data-key="p2_link_demo">Ver Demo en Vivo →</a>
-                    <a href="https://github.com/jaaidi0/aemet-dashboard-pro" target="_blank" class="btn-link" data-key="p2_link_repo">Ver Repositorio →</a>
-                </div>
-            </div>
-            <div class="metric-grid-box">
-                <div class="metric-box">
-                    <div class="metric-val">1.14s</div>
-                    <div class="metric-label" data-key="p2_m1_label">Latencia Optimizada</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-val">99.1%</div>
-                    <div class="metric-label" data-key="p2_m2_label">Mejora de Rendimiento</div>
-                </div>
-            </div>
-        </article>
+<div class="metric-box">
+    <div class="metric-val">ETL</div>
+    <div class="metric-label">Concurrent Processing</div>
+</div>
 
-        <article class="project-card">
-            <div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Shadowing English <span style="color:var(--accent)">●</span></h3>
-                <p data-key="p3_sub" style="color:var(--accent); font-weight:600; margin-bottom:20px;">Automated Media Factory Pipeline</p>
-                <p data-key="p3_sol">
-                    Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa, edita y monta clips de vídeo de forma programática y los distribuye con metadatos optimizados SEO a través de APIs de streaming sin intervención humana.
-                </p>
-                <div style="margin-top: 20px;">
-                    <a href="https://github.com/jaaidi0" target="_blank" class="btn-link" data-key="p3_link_repo">Ver Repositorio →</a>
-                </div>
-            </div>
-            <div class="metric-grid-box">
-                <div class="metric-box">
-                    <div class="metric-val">6 min</div>
-                    <div class="metric-label" data-key="p3_m1_label">Tiempo de Renderizado</div>
-                </div>
-                <div class="metric-box">
-                    <div class="metric-val">100%</div>
-                    <div class="metric-label" data-key="p3_m2_label">Automatización End-to-End</div>
-                </div>
-            </div>
-        </article>
-    </section>
+<div class="metric-box">
+    <div class="metric-val">API</div>
+    <div class="metric-label">Fault Tolerant Design</div>
+</div>
 
-    <footer style="text-align: center; padding: 100px 20px; border-top: 1px solid var(--border);">
-        <p style="color:var(--text-muted); font-size: 0.9rem;">© 2026 El Mostapha Jaaidi. Engineered for Impact in Dos Hermanas, Sevilla.</p>
-    </footer>
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
 
-    <script>
-        const translations = {
-            es: {
-                nav_projects: "Proyectos",
-                hero_badge: "Biología → Ingeniería IoT",
-                role: "Agro-Tech Developer",
-                hero_desc: "Transformo señales biológicas en decisiones estratégicas. Diseño infraestructuras IoT y sistemas distribuidos que anticipan riesgos y optimizan el riego.",
-                btn_projects: "Ver Casos de Estudio",
-                banner_status: "DISPONIBLE INMEDIATAMENTE · Presencial · Híbrido · Remoto",
-                banner_specialty: "🎯 Especialidad: Backend, IoT & Automation en Sevilla o Remoto",
-                cases_title: "Casos de Estudio",
-                scada_title: "📊 TELEMETRÍA EN VIVO (v9.2.3)",
-                scada_t1: "TEMP. AGUA",
-                scada_t2: "CONDUCTIVIDAD",
-                scada_w: " (Agua)",
-                scada_node_metrics: "Agua: 7.5°C | pH: 15.92 pH | O₂: ❌ Sin dato | EC: 482.2µS/cm (🕐 0s atrás)",
-                scada_alert_title: "🚨 RECENT FORENSIC ALERTS (O₂ CRITICAL):",
-                p1_sub: "Monitorización microclimática predictiva",
-                p1_sol: "De la biología al Cloud: Infraestructura distribuida que aísla fallos de hardware mediante flujos de SENSOR_FAIL remotos. Reduce un 40% el uso de fungicidas basándose en el Déficit de Presión de Vapor (VPD) en tiempo real.",
-                p1_link_demo: "Ver Demo en Vivo →",
-                p1_link_doc: "Documentación →",
-                p1_m1_label: "Fungicidas (Viticultura)",
-                p1_m2_label: "Producción Invernaderos",
-                p2_sub: "Optimización de ingesta climática masiva",
-                p2_sol: "Dashboard geoespacial e infraestructura ETL robusta conectada a la API AEMET OpenData. Monitorea y calcula índices térmicos y agroclimáticos avanzados (THI, Humidex, Punto de Rocío) integrando hilos de concurrencia y una caché inteligente para neutralizar caídas de servicios externos.",
-                p2_link_demo: "Ver Demo en Vivo →",
-                p2_link_repo: "Ver Repositorio →",
-                p2_m1_label: "Latencia Optimizada",
-                p2_m2_label: "Mejora de Rendimiento",
-                p3_sub: "Automated Media Factory Pipeline",
-                p3_sol: "Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa, edita y monta clips de vídeo de forma programática y los distribuye con metadatos optimizados SEO a través de APIs de streaming sin intervención humana.",
-                p3_link_repo: "Ver Repositorio →",
-                p3_m1_label: "Tiempo de Renderizado",
-                p3_m2_label: "Automatización End-to-End"
-            },
-            en: {
-                nav_projects: "Projects",
-                hero_badge: "Biology → IoT Engineering",
-                role: "Agro-Tech Developer",
-                hero_desc: "Translating biological signals into strategic decisions. I design IoT infrastructures and distributed systems that predict risks and optimize irrigation.",
-                btn_projects: "View Case Studies",
-                banner_status: "AVAILABLE IMMEDIATELY · On-site · Hybrid · Remote",
-                banner_specialty: "🎯 Specialty: Backend, IoT & Automation in Seville or Remote",
-                cases_title: "Case Studies",
-                scada_title: "📊 LIVE TELEMETRY STREAM (v9.2.3)",
-                scada_t1: "WATER TEMP",
-                scada_t2: "CONDUCTIVITY",
-                scada_w: " (Water)",
-                scada_node_metrics: "Water: 7.5°C | pH: 15.92 pH | O₂: ❌ No data | EC: 482.2µS/cm (🕐 0s ago)",
-                scada_alert_title: "🚨 RECENT FORENSIC ALERTS (O₂ CRITICAL):",
-                p1_sub: "Predictive microclimate monitoring",
-                p1_sol: "From biology to Cloud: Distributed infrastructure that isolates hardware failures using remote SENSOR_FAIL loops. Achieves a 40% reduction in fungicide application based on real-time Vapor Pressure Deficit (VPD).",
-                p1_link_demo: "Live Demo →",
-                p1_link_doc: "Documentation →",
-                p1_m1_label: "Fungicides (Viticulture)",
-                p1_m2_label: "Greenhouse Yield",
-                p2_sub: "Massive climate ingestion optimization",
-                p2_sol: "Geospatial dashboard and robust ETL pipeline connected to AEMET OpenData API. Monitors and computes advanced thermal and agrometeorological indices (THI, Humidex, Dew Point) integrating concurrent threading and smart data caching to neutralize upstream API bottlenecks.",
-                p2_link_demo: "Live Demo →",
-                p2_link_repo: "View Repository →",
-                p2_m1_label: "Optimized Latency",
-                p2_m2_label: "Performance Boost",
-                p3_sub: "Automated Media Factory Pipeline",
-                p3_sol: "End-to-end automated multimedia ETL pipeline construction. It programmatically processes and edits video content, deploying it with SEO-optimized metadata via streaming APIs with zero manual intervention.",
-                p3_link_repo: "View Repository →",
-                p3_m1_label: "Rendering Time",
-                p3_m2_label: "End-to-End Automation"
-            }
-        };
+<footer style="text-align: center; padding: 100px 20px; border-top: 1px solid var(--border);">
+    <p style="color:var(--text-muted); font-size: 0.9rem;">
+        © 2026 El Mostapha Jaaidi · IoT · Data Engineering · Automation · Sevilla, Spain
+    </p>
+</footer>
 
-        function setLanguage(lang) {
-            document.querySelectorAll('[data-key]').forEach(el => {
-                const key = el.getAttribute('data-key');
-                if (translations[lang][key]) el.innerHTML = translations[lang][key];
-            });
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            const btn = lang === 'es' ? document.querySelectorAll('.lang-btn')[0] : document.querySelectorAll('.lang-btn')[1];
-            btn.classList.add('active');
-            localStorage.setItem('lang', lang);
-        }
+<!-- ========================= -->
+<!-- ENGLISH TRANSLATIONS -->
+<!-- ========================= -->
 
-        /* --- PARTICLES ENGINE --- */
-        const canvas = document.getElementById("particles");
-        const ctx = canvas.getContext("2d");
-        let w = canvas.width = window.innerWidth;
-        let h = canvas.height = window.innerHeight;
-        const particles = Array.from({length: 45}, () => ({
-            x: Math.random() * w, y: Math.random() * h,
-            vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4
-        }));
-        function animate() {
-            ctx.clearRect(0,0,w,h);
-            particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
-                if(p.x<0 || p.x>w) p.vx*=-1; if(p.y<0 || p.y>h) p.vy*=-1;
-                ctx.fillStyle = "rgba(0,255,157,0.2)";
-                ctx.beginPath(); ctx.arc(p.x, p.y, 1.5, 0, Math.PI*2); ctx.fill();
-            });
-            requestAnimationFrame(animate);
-        }
-        animate();
+<script>
+translations.en.hero_desc =
+"Transforming biological signals into data-driven decisions. I design IoT infrastructures and distributed systems for environmental monitoring, automation and precision agriculture.";
 
-        /* --- INTRO LEAF ANIMATION --- */
-        (function() {
-            const lCanvas = document.getElementById('leaf-canvas');
-            const lCtx = lCanvas.getContext('2d');
-            lCanvas.width = window.innerWidth; lCanvas.height = window.innerHeight;
-            let leaves = Array.from({length: 30}, () => ({ x: Math.random() * lCanvas.width, y: -20, vy: Math.random() * 2 + 1 }));
-            function draw() {
-                lCtx.clearRect(0,0,lCanvas.width,lCanvas.height);
-                leaves.forEach(l => { l.y += l.vy; lCtx.fillStyle = "#00ff9d"; lCtx.beginPath(); lCtx.arc(l.x, l.y, 2, 0, Math.PI*2); lCtx.fill(); });
-                if(leaves[0].y < lCanvas.height) requestAnimationFrame(draw);
-                else document.getElementById('leaf-overlay').style.opacity = '0';
-            }
-            draw();
-        })();
+translations.en.p1_sub =
+"IoT platform for environmental monitoring and distributed telemetry";
 
-        window.addEventListener('resize', () => { w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight; });
-        setLanguage(localStorage.getItem('lang') || 'es');
-    </script>
-</body>
-</html>
+translations.en.p1_sol =
+"From biology to Cloud: Distributed IoT platform for real-time environmental monitoring. Designed to automate sensor ingestion, isolate hardware failures through SENSOR_FAIL events and centralize agroclimatic telemetry on a scalable Python and TimescaleDB architecture.";
+
+translations.en.scada_node_metrics =
+"Water: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s ago)";
+
+translations.en.p2_sol =
+"Geospatial dashboard and ETL infrastructure connected to the AEMET OpenData API. Processes and computes advanced agroclimatic indices such as THI, Humidex and Dew Point using concurrency, smart caching and resilient pipelines to minimize latency and tolerate external service interruptions.";
+
+translations.en.p3_sol =
+"Automated multimedia pipeline for content processing and distribution. Orchestrates video ETL workflows using Python, automating rendering, editing, metadata generation and programmatic publishing across digital platforms.";
+</script>

@@ -112,7 +112,6 @@
         .project-card:hover { border-color: var(--primary-glow); transform: translateY(-5px); }
         .metric-grid-box { display: grid; grid-template-columns: 1fr; gap: 15px; }
         .metric-box { background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; text-align: center; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; }
-        .metric-box { background: rgba(0,0,0,0.2); padding: 25px; border-radius: 16px; text-align: center; border: 1px solid var(--border); display: flex; flex-direction: column; justify-content: center; }
         .metric-val { font-size: 2.8rem; font-weight: 800; color: var(--primary); line-height: 1; }
         .metric-label { font-size: 0.8rem; text-transform: uppercase; margin-top: 10px; letter-spacing: 1px; color: var(--text-muted); }
         
@@ -206,31 +205,30 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 15px;">
                         <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
                             <span style="color: var(--text-muted); font-size: 0.65rem; display: block;" data-key="scada_t1">AVG TEMPERATURE</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: #fff;">7.5 °C <span style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;" data-key="scada_w"> (Agua)</span></span>
+                            <span style="font-size: 1.15rem; font-weight: bold; color: #fff;">21.1 °C <span style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;" data-key="scada_w"> (Agua)</span></span>
                         </div>
-                        <div style="background: rgba(239, 68, 68, 0.05); padding: 8px; border-radius: 6px; border: 1px solid rgba(239, 68, 68, 0.2);">
-                            <span style="color: #ef4444; font-size: 0.65rem; display: block;">🚀 FLEET pH INDEX</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: #f87171;">15.92 pH</span>
+                        <div style="background: rgba(0, 255, 157, 0.04); padding: 8px; border-radius: 6px; border: 1px solid rgba(0, 255, 157, 0.25);">
+                            <span style="color: var(--primary); font-size: 0.65rem; display: block;">🚀 FLEET pH INDEX</span>
+                            <span style="font-size: 1.15rem; font-weight: bold; color: #fff;">7.14 pH</span>
                         </div>
                         <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
                             <span style="color: var(--text-muted); font-size: 0.65rem; display: block;" data-key="scada_t2">CONDUCTIVITY</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: var(--secondary);">482.2 µS/cm</span>
+                            <span style="font-size: 1.15rem; font-weight: bold; color: var(--secondary);">1187.2 µS/cm</span>
                         </div>
                     </div>
 
-                    <div style="background: rgba(245, 158, 11, 0.05); border-left: 3px solid #f59e0b; padding: 10px; border-radius: 0 6px 6px 0; margin-bottom: 15px;">
-                        <div style="display: flex; justify-content: space-between; font-weight: bold; color: #f59e0b; margin-bottom: 4px;">
-                            <span>📍 ETSIA_SEVILLA_NODO_01</span>
-                            <span>🟡 DEGRADED</span>
+                    <div style="background: rgba(0, 255, 157, 0.05); border-left: 3px solid var(--primary); padding: 10px; border-radius: 0 6px 6px 0; margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; font-weight: bold; color: var(--primary); margin-bottom: 4px;">
+                            <span>📍 ETSIA_SEVILLA_NODO_03</span>
+                            <span>🟢 ONLINE</span>
                         </div>
-                        <span style="color: var(--text-muted); font-size: 0.75rem;" data-key="scada_node_metrics">Agua: 7.5°C | pH: 15.92 pH | O₂: ❌ Sin dato | EC: 482.2µS/cm (🕐 0s atrás)</span>
+                        <span style="color: var(--text-muted); font-size: 0.75rem;" data-key="scada_node_metrics">Agua: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s atrás)</span>
                     </div>
 
-                    <div style="background: rgba(239, 68, 68, 0.03); border: 1px dashed rgba(239, 68, 68, 0.2); padding: 10px; border-radius: 6px; color: #f87171; font-size: 0.7rem;">
-                        <span style="font-weight: bold; display: block; margin-bottom: 4px; color: #ef4444;" data-key="scada_alert_title">🚨 RECENT FORENSIC ALERTS (O₂ CRITICAL):</span>
-                        • [CRITICAL] ETSIA_SEVILLA_NODO_01: O2_LETHAL_LIMIT (0:47:30)<br>
-                        • [CRITICAL] ETSIA_SEVILLA_NODO_01: O2_LETHAL_LIMIT (0:42:30)<br>
-                        • [WARNING] pH Sensor Requires Lab Recalibration (Value out of range)
+                    <div style="background: rgba(0, 255, 157, 0.02); border: 1px dashed rgba(0, 255, 157, 0.2); padding: 10px; border-radius: 6px; color: var(--text-muted); font-size: 0.7rem;">
+                        <span style="font-weight: bold; display: block; margin-bottom: 4px; color: var(--primary);" data-key="scada_alert_title">🚨 RECENT FORENSIC ALERTS:</span>
+                        • [OK] Sistema estable. Sin alertas críticas pendientes.<br>
+                        • [INFO] Dispositivo operando normalmente con todos los sensores críticos en rangos.
                     </div>
                 </div>
 
@@ -318,11 +316,11 @@
                 banner_specialty: "🎯 Especialidad: Backend, IoT & Automation en Sevilla o Remoto",
                 cases_title: "Casos de Estudio",
                 scada_title: "📊 TELEMETRÍA EN VIVO (v9.2.3)",
-                scada_t1: "TEMP. AGUA",
+                scada_t1: "AVG TEMPERATURE",
                 scada_t2: "CONDUCTIVIDAD",
                 scada_w: " (Agua)",
-                scada_node_metrics: "Agua: 7.5°C | pH: 15.92 pH | O₂: ❌ Sin dato | EC: 482.2µS/cm (🕐 0s atrás)",
-                scada_alert_title: "🚨 RECENT FORENSIC ALERTS (O₂ CRITICAL):",
+                scada_node_metrics: "Agua: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s atrás)",
+                scada_alert_title: "🚨 RECENT FORENSIC ALERTS:",
                 p1_sub: "Monitorización microclimática predictiva",
                 p1_sol: "De la biología al Cloud: Infraestructura distribuida que aísla fallos de hardware mediante flujos de SENSOR_FAIL remotos. Reduce un 40% el uso de fungicidas basándose en el Déficit de Presión de Vapor (VPD) en tiempo real.",
                 p1_link_demo: "Ver Demo en Vivo →",
@@ -351,11 +349,11 @@
                 banner_specialty: "🎯 Specialty: Backend, IoT & Automation in Seville or Remote",
                 cases_title: "Case Studies",
                 scada_title: "📊 LIVE TELEMETRY STREAM (v9.2.3)",
-                scada_t1: "WATER TEMP",
+                scada_t1: "AVG TEMPERATURE",
                 scada_t2: "CONDUCTIVITY",
                 scada_w: " (Water)",
-                scada_node_metrics: "Water: 7.5°C | pH: 15.92 pH | O₂: ❌ No data | EC: 482.2µS/cm (🕐 0s ago)",
-                scada_alert_title: "🚨 RECENT FORENSIC ALERTS (O₂ CRITICAL):",
+                scada_node_metrics: "Water: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s ago)",
+                scada_alert_title: "🚨 RECENT FORENSIC ALERTS:",
                 p1_sub: "Predictive microclimate monitoring",
                 p1_sol: "From biology to Cloud: Distributed infrastructure that isolates hardware failures using remote SENSOR_FAIL loops. Achieves a 40% reduction in fungicide application based on real-time Vapor Pressure Deficit (VPD).",
                 p1_link_demo: "Live Demo →",

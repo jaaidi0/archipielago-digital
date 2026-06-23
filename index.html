@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="El Mostapha Jaaidi - Agro-Tech Developer & Data Systems Engineer. Especialista en IoT, Python y IA para agricultura de precisión.">
-    <meta name="keywords" content="AgroTech, IoT, Python, Data Science, MQTT, TimescaleDB, Agricultura de Precisión, Data Engineer">
+    <meta name="description" content="El Mostapha Jaaidi - Python Backend & Data Engineer. Sistemas IoT y pipelines de datos en tiempo real para agricultura de precisión.">
+    <meta name="keywords" content="Python, FastAPI, IoT, Data Engineering, FIWARE, TimescaleDB, Docker, AgroTech">
     <meta name="author" content="El Mostapha Jaaidi">
     <meta name="theme-color" content="#05080f">
-    <meta property="og:site_name" content="Agro-Tech Engineering Portfolio">
-    <meta property="og:title" content="El Mostapha Jaaidi | Agro-Tech Developer">
-    <meta property="og:description" content="Diseño sistemas IoT y plataformas de datos que anticipan plagas y optimizan cultivos.">
+    <meta property="og:site_name" content="El Mostapha Jaaidi | Portfolio">
+    <meta property="og:title" content="El Mostapha Jaaidi | Python Backend & Data Engineer">
+    <meta property="og:description" content="Construyo sistemas que procesan datos de sensores en tiempo real y generan decisiones agrícolas fiables.">
     <meta property="og:image" content="img/foto.png">
     <meta property="og:type" content="profile">
-    <title>El Mostapha Jaaidi | Agro-Tech Developer</title>
+    <title>El Mostapha Jaaidi | Python Backend & Data Engineer</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
     
@@ -21,12 +21,13 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "El Mostapha Jaaidi",
-      "jobTitle": "Agro-Tech Developer & Data Systems Engineer",
-      "knowsAbout": ["IoT", "Python", "Agro-Data Intelligence", "MQTT", "Docker", "TimescaleDB"],
+      "jobTitle": "Python Backend & Data Engineer",
+      "knowsAbout": ["IoT", "Python", "FastAPI", "FIWARE", "Docker", "TimescaleDB", "Data Pipelines"],
       "url": "https://jaaidi0.github.io",
       "sameAs": [
         "https://linkedin.com/in/el-jaidi",
-        "https://github.com/jaaidi0"
+        "https://github.com/jaaidi0",
+        "https://agrosentinel.dev"
       ]
     }
     </script>
@@ -53,7 +54,6 @@
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
-        /* --- NAVIGATION --- */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 1000;
             padding: 18px 5%;
@@ -70,7 +70,6 @@
         .lang-btn { background: transparent; border: none; color: var(--text-muted); padding: 4px 8px; font-size: 0.75rem; font-weight: 700; cursor: pointer; border-radius: 4px; transition: 0.3s; }
         .lang-btn.active { background: var(--primary); color: #000; }
         
-        /* --- HERO --- */
         .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 120px 20px 80px; position: relative; }
         .container { max-width: 1150px; width: 100%; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 70px; align-items: center; }
         .origin-badge {
@@ -81,10 +80,11 @@
             border: 1px solid rgba(0, 255, 157, 0.2); letter-spacing: 0.5px; text-transform: uppercase;
         }
         h1 { font-size: clamp(3rem, 5.5vw, 4.5rem); line-height: 1.05; font-weight: 800; margin-bottom: 15px; color: #fff; }
-        .role-subtitle { font-size: 1.4rem; color: var(--text-muted); margin-bottom: 25px; }
+        .role-subtitle { font-size: 1.4rem; color: var(--text-muted); margin-bottom: 15px; }
         .role-subtitle span { color: var(--secondary); font-weight: 600; }
-        
-        /* --- AVAILABILITY BANNER --- */
+        .hero-stack { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 25px; }
+        .hero-stack code { color: var(--primary); background: rgba(0,255,157,0.06); padding: 2px 6px; border-radius: 4px; font-size: 0.8rem; }
+
         .availability-banner {
             background: linear-gradient(90deg, rgba(0,255,157,0.05), rgba(56,189,248,0.05));
             border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
@@ -92,22 +92,7 @@
         }
         .banner-content { max-width: 1150px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
         .status-pill { display: flex; align-items: center; gap: 8px; font-weight: 700; color: var(--primary); font-size: 0.85rem; }
-        
-        /* --- ARCHITECTURE DIAGRAM --- */
-        .architecture-diagram { background: rgba(0,0,0,0.4); border: 1px solid rgba(0,255,135,0.2); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; position: relative; overflow: hidden; }
-        .architecture-diagram::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: var(--primary); opacity: 0.3; animation: scan 3s linear infinite; }
-        @keyframes scan { 0% { top: 0; } 100% { top: 100%; } }
-        
-        .arch-layer { background: rgba(255,255,255,0.03); border-radius: 8px; padding: 12px; margin-bottom: 8px; border-left: 3px solid var(--text-muted); text-align: left; }
-        .arch-layer.hardware { border-left-color: var(--accent); }
-        .arch-layer.backend { border-left-color: var(--primary); }
-        .arch-layer.cloud { border-left-color: var(--secondary); }
-        .layer-label { font-size: 0.6rem; text-transform: uppercase; color: var(--text-muted); display: block; margin-bottom: 5px; font-weight: 700; }
-        .components { display: flex; gap: 6px; flex-wrap: wrap; }
-        .component { background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; border: 1px solid var(--border); }
-        .arch-arrow { text-align: center; color: var(--primary); font-size: 1.2rem; margin: 2px 0; }
-        
-        /* --- PROJECT CARDS --- */
+
         .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 45px; margin-bottom: 50px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; transition: 0.3s; align-items: center; }
         .project-card:hover { border-color: var(--primary-glow); transform: translateY(-5px); }
         .metric-grid-box { display: grid; grid-template-columns: 1fr; gap: 15px; }
@@ -115,21 +100,31 @@
         .metric-val { font-size: 2.8rem; font-weight: 800; color: var(--primary); line-height: 1; }
         .metric-label { font-size: 0.8rem; text-transform: uppercase; margin-top: 10px; letter-spacing: 1px; color: var(--text-muted); }
         
+        .tech-pills { display: flex; gap: 6px; flex-wrap: wrap; margin: 12px 0 20px; }
+        .tech-pill { background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 3px 10px; border-radius: 4px; font-size: 0.78rem; color: var(--text-muted); }
+
+        .case-block { margin: 16px 0; }
+        .case-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); display: block; margin-bottom: 4px; }
+        .case-text { font-size: 0.95rem; color: var(--text); }
+
         .btn-primary { background: var(--primary); color: #05080f; padding: 14px 34px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; box-shadow: 0 0 20px var(--primary-glow); transition: 0.2s; cursor: pointer; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px var(--primary-glow); }
-        
+        .btn-secondary { background: transparent; border: 1px solid var(--primary); color: var(--primary); padding: 14px 34px; border-radius: 8px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: 0.2s; }
+        .btn-secondary:hover { background: rgba(0,255,157,0.05); }
         .btn-link { display: inline-block; margin-top: 15px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; margin-right: 20px; }
         .btn-link:hover { text-decoration: underline; }
         
-        /* --- CANVAS & IMGS --- */
         #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
         .hero-img { width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         @media (max-width: 900px) { 
             .container, .project-card { grid-template-columns: 1fr; text-align: center; } 
-            .architecture-diagram { display: none; } 
             .btn-link { margin: 10px 10px 0 10px; }
+            .tech-pills { justify-content: center; }
+            .btn-group { justify-content: center; }
         }
         @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.4; } 100% { opacity: 1; } }
+
+        .live-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,255,157,0.08); border: 1px solid rgba(0,255,157,0.2); color: var(--primary); padding: 4px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; margin-bottom: 8px; }
     </style>
 </head>
 <body>
@@ -142,6 +137,7 @@
             <div class="nav-items">
                 <a href="#projects" data-key="nav_projects">Proyectos</a>
                 <a href="https://linkedin.com/in/el-jaidi" target="_blank">LinkedIn</a>
+                <a href="mailto:jaaiidii@gmail.com" data-key="nav_contact">Contacto</a>
             </div>
             <div class="lang-switch">
                 <button class="lang-btn active" onclick="setLanguage('es')">ES</button>
@@ -156,19 +152,26 @@
             <div class="hero-content">
                 <div class="origin-badge">
                     <div class="live-dot" style="width:8px; height:8px; background:var(--primary); border-radius:50%; animation: pulse 2s infinite;"></div> 
-                    <span data-key="hero_badge">Biología → Ingeniería IoT</span>
+                    <span data-key="hero_badge">Biología → Ingeniería de Datos</span>
                 </div>
                 
                 <h1>EL MOSTAPHA JAAIDI</h1>
                 <div class="role-subtitle">
-                    <span data-key="role">Agro-Tech Developer</span> & Data Engineer
+                    <span data-key="role">Python Backend</span> & Data Engineer
                 </div>
+
+                <p class="hero-stack" data-key="hero_stack">
+                    <code>Python</code> · <code>FastAPI</code> · <code>PostgreSQL</code> · <code>Docker</code> · <code>FIWARE Orion</code> · <code>IoT</code>
+                </p>
                 
                 <p data-key="hero_desc">
-                    Transformo señales biológicas en decisiones estratégicas. Diseño infraestructuras IoT y sistemas distribuidos que 
-                    <strong>anticipan riesgos y optimizan el riego</strong> eliminando la incertidumbre del campo.
+                    Construyo sistemas backend en Python que procesan datos de sensores en tiempo real, filtran entradas no fiables y generan decisiones accionables. Disponible para roles de backend y data engineering.
                 </p>
-                <a href="#projects" class="btn-primary" data-key="btn_projects">Ver Casos de Estudio</a>
+
+                <div class="btn-group" style="display:flex; gap:12px; flex-wrap:wrap; margin-top:25px;">
+                    <a href="#projects" class="btn-primary" data-key="btn_projects">Ver Proyectos</a>
+                    <a href="mailto:jaaiidii@gmail.com" class="btn-secondary" data-key="btn_contact">Contactar</a>
+                </div>
             </div>
             <div class="hero-img-wrapper">
                 <img src="img/foto.png" alt="Mostapha Jaaidi" class="hero-img" onerror="this.src='https://ui-avatars.com/api/?name=Mostapha+Jaidi&background=0e121b&color=00ff9d&size=400'">
@@ -183,106 +186,127 @@
                 <span data-key="banner_status">DISPONIBLE INMEDIATAMENTE · Presencial · Híbrido · Remoto</span>
             </div>
             <div style="font-size: 0.9rem; color: var(--text-muted);" data-key="banner_specialty">
-                🎯 Especialidad: Backend, IoT & Automation en Sevilla o Remoto
+                📍 Sevilla · Python Backend · Data Engineering · IoT
             </div>
         </div>
     </section>
 
     <section id="projects" style="max-width: 1150px; margin: 0 auto; padding: 60px 20px;">
-        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 50px;" data-key="cases_title">Casos de Estudio</h2>
+        <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 50px;" data-key="cases_title">Proyectos</h2>
         
+        <!-- AGROSENTINEL -->
         <article class="project-card">
             <div>
-                <h3 style="font-size: 1.8rem; margin-bottom: 10px;">AgroSentinel IoT <span style="color:var(--primary)">●</span></h3>
-                <p data-key="p1_sub" style="color:var(--primary); font-weight:600; margin-bottom:20px;">Monitorización microclimática predictiva</p>
-                
-                <div style="background: rgba(0,0,0,0.6); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px; font-family: monospace; font-size: 0.8rem; margin-bottom: 25px; text-align: left; box-shadow: inset 0 0 15px rgba(0,0,0,0.5);">
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border); padding-bottom: 8px; margin-bottom: 12px; color: var(--text-muted);">
-                        <span data-key="scada_title">📊 TELEMETRÍA EN VIVO (v9.2.3)</span>
-                        <span style="color: var(--primary); animation: pulse 1s infinite;">● LINK ACTIVE</span>
-                    </div>
-                    
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 15px;">
-                        <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
-                            <span style="color: var(--text-muted); font-size: 0.65rem; display: block;" data-key="scada_t1">AVG TEMPERATURE</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: #fff;">21.1 °C <span style="font-size:0.75rem; color:var(--text-muted); font-weight:normal;" data-key="scada_w"> (Agua)</span></span>
-                        </div>
-                        <div style="background: rgba(0, 255, 157, 0.04); padding: 8px; border-radius: 6px; border: 1px solid rgba(0, 255, 157, 0.25);">
-                            <span style="color: var(--primary); font-size: 0.65rem; display: block;">🚀 FLEET pH INDEX</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: #fff;">7.14 pH</span>
-                        </div>
-                        <div style="background: rgba(255,255,255,0.02); padding: 8px; border-radius: 6px; border: 1px solid var(--border);">
-                            <span style="color: var(--text-muted); font-size: 0.65rem; display: block;" data-key="scada_t2">CONDUCTIVITY</span>
-                            <span style="font-size: 1.15rem; font-weight: bold; color: var(--secondary);">1187.2 µS/cm</span>
-                        </div>
-                    </div>
+                <div class="live-badge">
+                    <div style="width:6px; height:6px; background:var(--primary); border-radius:50%; animation: pulse 1.5s infinite;"></div>
+                    <span data-key="p1_live">EN PRODUCCIÓN · agrosentinel.dev</span>
+                </div>
+                <h3 style="font-size: 1.8rem; margin-bottom: 6px;">AgroSentinel <span style="color:var(--primary)">●</span></h3>
+                <p data-key="p1_sub" style="color:var(--primary); font-weight:600; margin-bottom:14px;">Sistema de decisión agrícola en tiempo real</p>
 
-                    <div style="background: rgba(0, 255, 157, 0.05); border-left: 3px solid var(--primary); padding: 10px; border-radius: 0 6px 6px 0; margin-bottom: 15px;">
-                        <div style="display: flex; justify-content: space-between; font-weight: bold; color: var(--primary); margin-bottom: 4px;">
-                            <span>📍 ETSIA_SEVILLA_NODO_03</span>
-                            <span>🟢 ONLINE</span>
-                        </div>
-                        <span style="color: var(--text-muted); font-size: 0.75rem;" data-key="scada_node_metrics">Agua: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s atrás)</span>
-                    </div>
-
-                    <div style="background: rgba(0, 255, 157, 0.02); border: 1px dashed rgba(0, 255, 157, 0.2); padding: 10px; border-radius: 6px; color: var(--text-muted); font-size: 0.7rem;">
-                        <span style="font-weight: bold; display: block; margin-bottom: 4px; color: var(--primary);" data-key="scada_alert_title">🚨 RECENT FORENSIC ALERTS:</span>
-                        • [OK] Sistema estable. Sin alertas críticas pendientes.<br>
-                        • [INFO] Dispositivo operando normalmente con todos los sensores críticos en rangos.
-                    </div>
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">FastAPI</span>
+                    <span class="tech-pill">PostgreSQL</span>
+                    <span class="tech-pill">Docker</span>
+                    <span class="tech-pill">FIWARE Orion</span>
+                    <span class="tech-pill">IoT / ESP32</span>
+                    <span class="tech-pill">FAO-56</span>
                 </div>
 
-                <p data-key="p1_sol">
-                    <strong>De la biología al Cloud:</strong> Infraestructura distribuida que aísla fallos de hardware mediante flujos de <code>SENSOR_FAIL</code> remotos. Reduce un 40% el uso de fungicidas basándose en el Déficit de Presión de Vapor (VPD) en tiempo real.
-                </p>
+                <div class="case-block">
+                    <span class="case-label" data-key="p1_prob_label">Problema</span>
+                    <p class="case-text" data-key="p1_prob">Los datos de sensores de campo son ruidosos e inconsistentes. Los sistemas tradicionales fallan o dan falsas alarmas cuando los datos no son perfectos.</p>
+                </div>
+                <div class="case-block">
+                    <span class="case-label" data-key="p1_sol_label">Solución</span>
+                    <p class="case-text" data-key="p1_sol">Pipeline en tiempo real: sensor → FastAPI → FIWARE Orion → decisión. Calcula VPD (FAO-56), ETc y riesgo fitosanitario. Integrado con datos reales del portal UCO/CitriData (finca La Oliverica, TEF). El sistema mantiene decisiones válidas incluso con entradas ruidosas o incompletas.</p>
+                </div>
+                <div class="case-block">
+                    <span class="case-label" data-key="p1_impact_label">Impacto</span>
+                    <p class="case-text" data-key="p1_impact">-40% uso de fungicidas · +25% estabilidad de producción · detección automática de fallos de hardware</p>
+                </div>
+
                 <div style="margin-top: 20px; display: flex; gap: 5px; flex-wrap: wrap;">
-                    <a href="https://agrosentinel-1.onrender.com" target="_blank" class="btn-link" data-key="p1_link_demo">Ver Demo en Vivo →</a>
+                    <a href="https://agrosentinel.dev" target="_blank" class="btn-link" data-key="p1_link_demo">Ver sistema en vivo →</a>
                     <a href="https://github.com/jaaidi0/AgroSentinel/blob/main/README.md" target="_blank" class="btn-link" data-key="p1_link_doc">Documentación →</a>
                 </div>
             </div>
             <div class="metric-grid-box">
                 <div class="metric-box">
                     <div class="metric-val">-40%</div>
-                    <div class="metric-label" data-key="p1_m1_label">Fungicidas (Viticultura)</div>
+                    <div class="metric-label" data-key="p1_m1_label">Fungicidas</div>
                 </div>
                 <div class="metric-box">
                     <div class="metric-val">+25%</div>
-                    <div class="metric-label" data-key="p1_m2_label">Producción Invernaderos</div>
+                    <div class="metric-label" data-key="p1_m2_label">Producción</div>
+                </div>
+                <div class="metric-box">
+                    <div class="metric-val">15 min</div>
+                    <div class="metric-label" data-key="p1_m3_label">Datos en vivo (UCO/TEF)</div>
                 </div>
             </div>
         </article>
 
+        <!-- AEMET -->
         <article class="project-card">
             <div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 10px;">AEMET Dashboard Pro <span style="color:var(--secondary)">●</span></h3>
-                <p data-key="p2_sub" style="color:var(--secondary); font-weight:600; margin-bottom:20px;">Optimización de ingesta climática masiva</p>
-                <p data-key="p2_sol">
-                    Dashboard geoespacial e infraestructura ETL robusta conectada a la API AEMET OpenData. Monitorea y calcula índices térmicos y agroclimáticos avanzados (THI, Humidex, Punto de Rocío) integrando hilos de concurrencia y una caché inteligente para neutralizar caídas de servicios externos.
-                </p>
+                <p data-key="p2_sub" style="color:var(--secondary); font-weight:600; margin-bottom:14px;">Pipeline climático de alta disponibilidad</p>
+
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Streamlit</span>
+                    <span class="tech-pill">ThreadPoolExecutor</span>
+                    <span class="tech-pill">REST APIs</span>
+                    <span class="tech-pill">Caché inteligente</span>
+                </div>
+
+                <div class="case-block">
+                    <span class="case-label" data-key="p2_prob_label">Problema</span>
+                    <p class="case-text" data-key="p2_prob">La API pública de AEMET es inestable y genera bloqueos en sistemas que dependen de datos climáticos en tiempo real.</p>
+                </div>
+                <div class="case-block">
+                    <span class="case-label" data-key="p2_sol_label">Solución</span>
+                    <p class="case-text" data-key="p2_sol">Infraestructura ETL con concurrencia real (ThreadPoolExecutor) y caché inteligente. Calcula índices agroclimáticos avanzados (THI, Humidex, Punto de Rocío) sin depender de la disponibilidad upstream.</p>
+                </div>
+
                 <div style="margin-top: 20px; display: flex; gap: 5px; flex-wrap: wrap;">
-                    <a href="https://aemet-dashboard-pro-3s9ay3cnvowfgvrutqvh4w.streamlit.app" target="_blank" class="btn-link" data-key="p2_link_demo">Ver Demo en Vivo →</a>
-                    <a href="https://github.com/jaaidi0/aemet-dashboard-pro" target="_blank" class="btn-link" data-key="p2_link_repo">Ver Repositorio →</a>
+                    <a href="https://aemet-dashboard-pro-3s9ay3cnvowfgvrutqvh4w.streamlit.app" target="_blank" class="btn-link" data-key="p2_link_demo">Ver Demo →</a>
+                    <a href="https://github.com/jaaidi0/aemet-dashboard-pro" target="_blank" class="btn-link" data-key="p2_link_repo">Repositorio →</a>
                 </div>
             </div>
             <div class="metric-grid-box">
                 <div class="metric-box">
                     <div class="metric-val">1.14s</div>
-                    <div class="metric-label" data-key="p2_m1_label">Latencia Optimizada</div>
+                    <div class="metric-label" data-key="p2_m1_label">Latencia (de 130s)</div>
                 </div>
                 <div class="metric-box">
                     <div class="metric-val">99.1%</div>
-                    <div class="metric-label" data-key="p2_m2_label">Mejora de Rendimiento</div>
+                    <div class="metric-label" data-key="p2_m2_label">Mejora de rendimiento</div>
                 </div>
             </div>
         </article>
 
+        <!-- SHADOWING -->
         <article class="project-card">
             <div>
                 <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Shadowing English <span style="color:var(--accent)">●</span></h3>
-                <p data-key="p3_sub" style="color:var(--accent); font-weight:600; margin-bottom:20px;">Automated Media Factory Pipeline</p>
-                <p data-key="p3_sol">
-                    Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa, edita y monta clips de vídeo de forma programática y los distribuye con metadatos optimizados SEO a través de APIs de streaming sin intervención humana.
-                </p>
+                <p data-key="p3_sub" style="color:var(--accent); font-weight:600; margin-bottom:14px;">Pipeline multimedia automatizado end-to-end</p>
+
+                <div class="tech-pills">
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">MoviePy</span>
+                    <span class="tech-pill">YouTube API</span>
+                    <span class="tech-pill">Edge TTS</span>
+                    <span class="tech-pill">Docker</span>
+                </div>
+
+                <div class="case-block">
+                    <span class="case-label" data-key="p3_sol_label">Qué construí</span>
+                    <p class="case-text" data-key="p3_sol">Pipeline ETL multimedia que genera, edita y publica vídeos educativos de forma completamente automática, de 0 intervención humana a 5-10 vídeos/día.</p>
+                </div>
+
                 <div style="margin-top: 20px;">
                     <a href="https://github.com/jaaidi0" target="_blank" class="btn-link" data-key="p3_link_repo">Ver Repositorio →</a>
                 </div>
@@ -290,87 +314,115 @@
             <div class="metric-grid-box">
                 <div class="metric-box">
                     <div class="metric-val">6 min</div>
-                    <div class="metric-label" data-key="p3_m1_label">Tiempo de Renderizado</div>
+                    <div class="metric-label" data-key="p3_m1_label">Por vídeo (de 2h)</div>
                 </div>
                 <div class="metric-box">
                     <div class="metric-val">100%</div>
-                    <div class="metric-label" data-key="p3_m2_label">Automatización End-to-End</div>
+                    <div class="metric-label" data-key="p3_m2_label">Automatizado</div>
                 </div>
             </div>
         </article>
     </section>
 
-    <footer style="text-align: center; padding: 100px 20px; border-top: 1px solid var(--border);">
-        <p style="color:var(--text-muted); font-size: 0.9rem;">© 2026 El Mostapha Jaaidi. Engineered for Impact in Dos Hermanas, Sevilla.</p>
+    <section style="max-width: 1150px; margin: 0 auto; padding: 40px 20px 100px; text-align: center;">
+        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 12px;" data-key="contact_title">¿Tienes un proyecto o una posición abierta?</h2>
+        <p style="color: var(--text-muted); margin-bottom: 28px;" data-key="contact_desc">Disponible para roles de Python backend, data engineering e IoT en Sevilla o remoto.</p>
+        <a href="mailto:jaaiidii@gmail.com" class="btn-primary" data-key="contact_btn">jaaiidii@gmail.com</a>
+    </section>
+
+    <footer style="text-align: center; padding: 40px 20px; border-top: 1px solid var(--border);">
+        <p style="color:var(--text-muted); font-size: 0.9rem;">© 2026 El Mostapha Jaaidi · Dos Hermanas, Sevilla</p>
     </footer>
 
     <script>
         const translations = {
             es: {
                 nav_projects: "Proyectos",
-                hero_badge: "Biología → Ingeniería IoT",
-                role: "Agro-Tech Developer",
-                hero_desc: "Transformo señales biológicas en decisiones estratégicas. Diseño infraestructuras IoT y sistemas distribuidos que anticipan riesgos y optimizan el riego.",
-                btn_projects: "Ver Casos de Estudio",
+                nav_contact: "Contacto",
+                hero_badge: "Biología → Ingeniería de Datos",
+                role: "Python Backend",
+                hero_stack: "<code>Python</code> · <code>FastAPI</code> · <code>PostgreSQL</code> · <code>Docker</code> · <code>FIWARE Orion</code> · <code>IoT</code>",
+                hero_desc: "Construyo sistemas backend en Python que procesan datos de sensores en tiempo real, filtran entradas no fiables y generan decisiones accionables. Disponible para roles de backend y data engineering.",
+                btn_projects: "Ver Proyectos",
+                btn_contact: "Contactar",
                 banner_status: "DISPONIBLE INMEDIATAMENTE · Presencial · Híbrido · Remoto",
-                banner_specialty: "🎯 Especialidad: Backend, IoT & Automation en Sevilla o Remoto",
-                cases_title: "Casos de Estudio",
-                scada_title: "📊 TELEMETRÍA EN VIVO (v9.2.3)",
-                scada_t1: "AVG TEMPERATURE",
-                scada_t2: "CONDUCTIVIDAD",
-                scada_w: " (Agua)",
-                scada_node_metrics: "Agua: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s atrás)",
-                scada_alert_title: "🚨 RECENT FORENSIC ALERTS:",
-                p1_sub: "Monitorización microclimática predictiva",
-                p1_sol: "De la biología al Cloud: Infraestructura distribuida que aísla fallos de hardware mediante flujos de SENSOR_FAIL remotos. Reduce un 40% el uso de fungicidas basándose en el Déficit de Presión de Vapor (VPD) en tiempo real.",
-                p1_link_demo: "Ver Demo en Vivo →",
+                banner_specialty: "📍 Sevilla · Python Backend · Data Engineering · IoT",
+                cases_title: "Proyectos",
+                p1_live: "EN PRODUCCIÓN · agrosentinel.dev",
+                p1_sub: "Sistema de decisión agrícola en tiempo real",
+                p1_prob_label: "Problema",
+                p1_prob: "Los datos de sensores de campo son ruidosos e inconsistentes. Los sistemas tradicionales fallan o dan falsas alarmas cuando los datos no son perfectos.",
+                p1_sol_label: "Solución",
+                p1_sol: "Pipeline en tiempo real: sensor → FastAPI → FIWARE Orion → decisión. Calcula VPD (FAO-56), ETc y riesgo fitosanitario. Integrado con datos reales del portal UCO/CitriData (finca La Oliverica, TEF). El sistema mantiene decisiones válidas incluso con entradas ruidosas o incompletas.",
+                p1_impact_label: "Impacto",
+                p1_impact: "-40% uso de fungicidas · +25% estabilidad de producción · detección automática de fallos de hardware",
+                p1_link_demo: "Ver sistema en vivo →",
                 p1_link_doc: "Documentación →",
-                p1_m1_label: "Fungicidas (Viticultura)",
-                p1_m2_label: "Producción Invernaderos",
-                p2_sub: "Optimización de ingesta climática masiva",
-                p2_sol: "Dashboard geoespacial e infraestructura ETL robusta conectada a la API AEMET OpenData. Monitorea y calcula índices térmicos y agroclimáticos avanzados (THI, Humidex, Punto de Rocío) integrando hilos de concurrencia y una caché inteligente para neutralizar caídas de servicios externos.",
-                p2_link_demo: "Ver Demo en Vivo →",
-                p2_link_repo: "Ver Repositorio →",
-                p2_m1_label: "Latencia Optimizada",
-                p2_m2_label: "Mejora de Rendimiento",
-                p3_sub: "Automated Media Factory Pipeline",
-                p3_sol: "Construcción de un pipeline ETL multimedia automatizado de extremo a extremo. Procesa, edita y monta clips de vídeo de forma programática y los distribuye con metadatos optimizados SEO a través de APIs de streaming sin intervención humana.",
+                p1_m1_label: "Fungicidas",
+                p1_m2_label: "Producción",
+                p1_m3_label: "Datos en vivo (UCO/TEF)",
+                p2_sub: "Pipeline climático de alta disponibilidad",
+                p2_prob_label: "Problema",
+                p2_prob: "La API pública de AEMET es inestable y genera bloqueos en sistemas que dependen de datos climáticos en tiempo real.",
+                p2_sol_label: "Solución",
+                p2_sol: "Infraestructura ETL con concurrencia real (ThreadPoolExecutor) y caché inteligente. Calcula índices agroclimáticos avanzados (THI, Humidex, Punto de Rocío) sin depender de la disponibilidad upstream.",
+                p2_link_demo: "Ver Demo →",
+                p2_link_repo: "Repositorio →",
+                p2_m1_label: "Latencia (de 130s)",
+                p2_m2_label: "Mejora de rendimiento",
+                p3_sub: "Pipeline multimedia automatizado end-to-end",
+                p3_sol_label: "Qué construí",
+                p3_sol: "Pipeline ETL multimedia que genera, edita y publica vídeos educativos de forma completamente automática, de 0 intervención humana a 5-10 vídeos/día.",
                 p3_link_repo: "Ver Repositorio →",
-                p3_m1_label: "Tiempo de Renderizado",
-                p3_m2_label: "Automatización End-to-End"
+                p3_m1_label: "Por vídeo (de 2h)",
+                p3_m2_label: "Automatizado",
+                contact_title: "¿Tienes un proyecto o una posición abierta?",
+                contact_desc: "Disponible para roles de Python backend, data engineering e IoT en Sevilla o remoto.",
+                contact_btn: "jaaiidii@gmail.com"
             },
             en: {
                 nav_projects: "Projects",
-                hero_badge: "Biology → IoT Engineering",
-                role: "Agro-Tech Developer",
-                hero_desc: "Translating biological signals into strategic decisions. I design IoT infrastructures and distributed systems that predict risks and optimize irrigation.",
-                btn_projects: "View Case Studies",
+                nav_contact: "Contact",
+                hero_badge: "Biology → Data Engineering",
+                role: "Python Backend",
+                hero_stack: "<code>Python</code> · <code>FastAPI</code> · <code>PostgreSQL</code> · <code>Docker</code> · <code>FIWARE Orion</code> · <code>IoT</code>",
+                hero_desc: "I build Python backend systems that process real-time sensor data, filter unreliable inputs, and deliver actionable decisions. Available for backend and data engineering roles.",
+                btn_projects: "View Projects",
+                btn_contact: "Contact Me",
                 banner_status: "AVAILABLE IMMEDIATELY · On-site · Hybrid · Remote",
-                banner_specialty: "🎯 Specialty: Backend, IoT & Automation in Seville or Remote",
-                cases_title: "Case Studies",
-                scada_title: "📊 LIVE TELEMETRY STREAM (v9.2.3)",
-                scada_t1: "AVG TEMPERATURE",
-                scada_t2: "CONDUCTIVITY",
-                scada_w: " (Water)",
-                scada_node_metrics: "Water: 21.1°C | pH: 7.14 pH | O₂: 9.0mg/L | EC: 1187.2µS/cm (🕐 0s ago)",
-                scada_alert_title: "🚨 RECENT FORENSIC ALERTS:",
-                p1_sub: "Predictive microclimate monitoring",
-                p1_sol: "From biology to Cloud: Distributed infrastructure that isolates hardware failures using remote SENSOR_FAIL loops. Achieves a 40% reduction in fungicide application based on real-time Vapor Pressure Deficit (VPD).",
-                p1_link_demo: "Live Demo →",
+                banner_specialty: "📍 Seville · Python Backend · Data Engineering · IoT",
+                cases_title: "Projects",
+                p1_live: "LIVE IN PRODUCTION · agrosentinel.dev",
+                p1_sub: "Real-time agricultural decision system",
+                p1_prob_label: "Problem",
+                p1_prob: "Field sensor data is noisy and inconsistent. Traditional systems fail or produce false alarms when input data is imperfect.",
+                p1_sol_label: "Solution",
+                p1_sol: "Real-time pipeline: sensor → FastAPI → FIWARE Orion → decision. Computes VPD (FAO-56), ETc and phytosanitary risk. Connected to live data from UCO/CitriData open portal (La Oliverica, TEF). The system maintains valid decisions even with noisy or incomplete inputs.",
+                p1_impact_label: "Impact",
+                p1_impact: "-40% fungicide usage · +25% production stability · automatic hardware failure detection",
+                p1_link_demo: "Live system →",
                 p1_link_doc: "Documentation →",
-                p1_m1_label: "Fungicides (Viticulture)",
-                p1_m2_label: "Greenhouse Yield",
-                p2_sub: "Massive climate ingestion optimization",
-                p2_sol: "Geospatial dashboard and robust ETL pipeline connected to AEMET OpenData API. Monitors and computes advanced thermal and agrometeorological indices (THI, Humidex, Dew Point) integrating concurrent threading and smart data caching to neutralize upstream API bottlenecks.",
+                p1_m1_label: "Fungicides",
+                p1_m2_label: "Production",
+                p1_m3_label: "Live data (UCO/TEF)",
+                p2_sub: "High-availability climate pipeline",
+                p2_prob_label: "Problem",
+                p2_prob: "Spain's public weather API (AEMET) is unstable and causes bottlenecks in systems that depend on real-time climate data.",
+                p2_sol_label: "Solution",
+                p2_sol: "ETL infrastructure with real concurrency (ThreadPoolExecutor) and smart caching. Computes advanced agrometeorological indices (THI, Humidex, Dew Point) without depending on upstream availability.",
                 p2_link_demo: "Live Demo →",
-                p2_link_repo: "View Repository →",
-                p2_m1_label: "Optimized Latency",
-                p2_m2_label: "Performance Boost",
-                p3_sub: "Automated Media Factory Pipeline",
-                p3_sol: "End-to-end automated multimedia ETL pipeline construction. It programmatically processes and edits video content, deploying it with SEO-optimized metadata via streaming APIs with zero manual intervention.",
+                p2_link_repo: "Repository →",
+                p2_m1_label: "Latency (from 130s)",
+                p2_m2_label: "Performance boost",
+                p3_sub: "End-to-end automated media pipeline",
+                p3_sol_label: "What I built",
+                p3_sol: "Multimedia ETL pipeline that automatically generates, edits and publishes educational videos — from zero human intervention to 5-10 videos/day.",
                 p3_link_repo: "View Repository →",
-                p3_m1_label: "Rendering Time",
-                p3_m2_label: "End-to-End Automation"
+                p3_m1_label: "Per video (from 2h)",
+                p3_m2_label: "Automated",
+                contact_title: "Have a project or open position?",
+                contact_desc: "Available for Python backend, data engineering and IoT roles in Seville or remote.",
+                contact_btn: "jaaiidii@gmail.com"
             }
         };
 
@@ -385,7 +437,6 @@
             localStorage.setItem('lang', lang);
         }
 
-        /* --- PARTICLES ENGINE --- */
         const canvas = document.getElementById("particles");
         const ctx = canvas.getContext("2d");
         let w = canvas.width = window.innerWidth;
@@ -406,7 +457,6 @@
         }
         animate();
 
-        /* --- INTRO LEAF ANIMATION --- */
         const lCanvas = document.getElementById('leaf-canvas');
         const lCtx = lCanvas.getContext('2d');
         lCanvas.width = window.innerWidth; lCanvas.height = window.innerHeight;
